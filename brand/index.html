@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#081C26"><meta name="description" content="RefMatch visual identity: the right fit, before kickoff. Explore the logo, theme, and fifteen-second explainer.">
+  <title>RefMatch — The identity</title><link rel="icon" type="image/svg+xml" href="logos/app-icon.svg"><link rel="stylesheet" href="theme.css">
+  <style>
+    html{scroll-behavior:smooth}.wrap{width:min(1280px,calc(100% - 80px));margin:auto}
+    header{display:flex;justify-content:space-between;align-items:center;padding:30px 0;border-bottom:1px solid var(--rm-border);gap:24px}.brand-logo{width:196px}
+    nav{display:flex;align-items:center;gap:30px;font-size:13px;font-weight:650}nav a{text-decoration:none;color:var(--rm-text-secondary)}nav a:hover{color:var(--rm-text)}
+    .theme-toggle{border:1px solid var(--rm-border);padding:9px 15px;border-radius:24px;background:transparent;color:var(--rm-text);font-size:12px;font-weight:700}
+    .hero{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:64px;padding:100px 0 96px}.hero h1{font-size:var(--rm-hero);letter-spacing:-.065em;margin:23px 0 27px;line-height:1.03}
+    .accent{color:var(--rm-mint)}[data-theme=light] .accent{color:#356B16}.hero p{max-width:430px;color:var(--rm-text-secondary);font-size:17px;line-height:1.8}.hero .actions{display:flex;gap:12px;margin-top:30px}
+    .emblem{min-height:460px;aspect-ratio:1;position:relative;display:grid;place-items:center;overflow:hidden;border-radius:32px;background:var(--rm-mint);color:var(--rm-ink)}
+    .emblem:before{content:'';position:absolute;border:1px solid #081c2629;inset:30px;border-radius:42px}.emblem:after{content:'';position:absolute;width:110%;height:1px;top:50%;background:#081c261c;transform:rotate(-35deg)}
+    .emblem .orbit{position:absolute;border:1px solid #081c2629;width:65%;aspect-ratio:1;border-radius:50%}.emblem img{width:40%;z-index:1}.emblem .top,.emblem .bottom{position:absolute;left:40px;right:40px;display:flex;justify-content:space-between;font-size:10px;font-weight:750;letter-spacing:.15em}.emblem .top{top:48px}.emblem .bottom{bottom:44px}
+    .intro-line{display:flex;justify-content:space-between;gap:24px;padding:24px 0;border-top:1px solid var(--rm-border);border-bottom:1px solid var(--rm-border);font-size:12px;color:var(--rm-text-secondary)}
+    .intro-line span:before{content:'↗';color:var(--rm-text);margin-right:12px}
+    section{padding:88px 0;border-bottom:1px solid var(--rm-border)}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:36px}.section-heading h2{font-size:42px;margin-top:12px}.section-heading>p{max-width:390px;font-size:14px;color:var(--rm-text-secondary)}
+    .film{border:1px solid var(--rm-border);border-radius:24px;overflow:hidden;background:var(--rm-deep)}video{width:100%;aspect-ratio:16/9}.film-meta{display:flex;justify-content:space-between;gap:20px;padding:20px 2px;font-size:12px;color:var(--rm-text-secondary)}.film-meta a{font-weight:700;color:var(--rm-text)}
+    .logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.logo-tile{border:1px solid var(--rm-border);border-radius:20px;overflow:hidden}.logo-art{aspect-ratio:1.5;display:grid;place-items:center;padding:38px}.logo-art img{width:100%}.logo-art.dark{background:#081C26}.logo-art.mint{background:#B6F36A}.logo-art.chalk{background:#F3F5EF}.logo-meta{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:var(--rm-surface);font-size:12px}.logo-meta a{font-weight:700}
+    .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:38px}.principles h3{font-size:21px;margin:10px 0}.principles p{font-size:13px;color:var(--rm-text-secondary)}.principles .no{font-family:var(--rm-font-display);font-size:13px;color:var(--rm-text-secondary)}
+    .palette{display:grid;grid-template-columns:2fr 2fr 1.5fr 1.5fr 1.5fr;gap:12px}.swatch{min-height:190px;border:1px solid #ffffff13;border-radius:16px;padding:20px;text-align:left;display:flex;flex-direction:column;justify-content:space-between;font-family:var(--rm-font-body)}.swatch b{font-size:14px}.swatch span{font-size:12px;font-weight:600}
+    .system-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:40px}.type-sample{border:1px solid var(--rm-border);border-radius:24px;padding:32px}.type-display{font-family:var(--rm-font-display);font-size:68px;line-height:1.2;letter-spacing:-.06em;margin:18px 0}.type-sample p{color:var(--rm-text-secondary);font-size:14px}.type-sample .font-name{font-size:11px;letter-spacing:.12em;font-weight:700;text-transform:uppercase}.type-sample hr{margin:22px 0}
+    .ranking .top{display:flex;align-items:center;justify-content:space-between}.ranking .name{font-family:var(--rm-font-display);font-size:30px;letter-spacing:-.04em;margin-top:16px}.ranking .rm-score{color:var(--rm-text)}.ranking .rm-score small{font-size:23px;color:var(--rm-text-secondary)}.ranking ul{padding:0;margin:22px 0 26px;list-style:none}.ranking li{padding:12px 0;border-bottom:1px solid var(--rm-border);display:flex;justify-content:space-between;font-size:14px}.ranking li strong{font-family:var(--rm-font-display)}.ranking .note{font-size:11px;margin-top:18px;color:var(--rm-text-secondary)}
+    .use{display:flex;align-items:center;justify-content:space-between;gap:30px;margin-top:40px;padding:28px 32px;border:1px solid var(--rm-border);border-radius:16px}.use p{font-size:13px;color:var(--rm-text-secondary);margin-top:4px}.use code{display:block;font-size:13px;margin-top:12px;color:var(--rm-text);overflow-wrap:anywhere}
+    footer{padding:32px 0 48px;display:flex;justify-content:space-between;font-size:12px;color:var(--rm-text-secondary)}.live{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:var(--rm-mint);color:var(--rm-ink);padding:10px 20px;border-radius:30px;font-size:13px;font-weight:700;opacity:0;pointer-events:none}.live.show{opacity:1}
+    @media(max-width:900px){.hero{gap:30px;padding:64px 0}.hero h1{font-size:64px}.emblem{min-height:330px}.logo-grid{gap:12px}.logo-art{padding:20px}.palette{grid-template-columns:repeat(5,1fr)}.swatch{padding:14px;min-height:160px}.section-heading h2{font-size:36px}}
+    @media(max-width:650px){.wrap{width:calc(100% - 36px)}header{padding:22px 0}.brand-logo{width:154px}nav{gap:12px}nav a{display:none}.hero{grid-template-columns:1fr;padding:58px 0 40px;gap:38px}.hero h1{font-size:clamp(48px,12vw,70px)}.emblem{min-height:0;aspect-ratio:1.2}.emblem .top{top:35px}.emblem .bottom{bottom:32px}.intro-line{font-size:10px;gap:8px}.intro-line span:before{margin-right:5px}section{padding:54px 0}.section-heading{display:block}.section-heading>p{margin-top:20px}.section-heading h2{font-size:36px}.logo-grid{grid-template-columns:1fr}.logo-art{aspect-ratio:2.3;padding:40px}.principles{grid-template-columns:1fr;gap:22px}.palette{grid-template-columns:repeat(2,1fr)}.swatch:first-child{grid-column:span 2}.swatch{min-height:130px}.system-grid{grid-template-columns:1fr;gap:20px}.use{display:block;padding:24px}.use a{margin-top:22px}.film-meta{flex-wrap:wrap}.film{border-radius:12px}.hero .actions{flex-wrap:wrap}footer{gap:20px;font-size:10px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header><a href="#" aria-label="RefMatch home"><img class="brand-logo" id="header-logo" src="logos/refmatch-primary.svg" alt="RefMatch"></a><nav aria-label="Main"><a href="#film">The film</a><a href="#identity">The identity</a><a href="#system">The system</a><button class="theme-toggle" id="toggle" aria-pressed="false">Light mode ↗</button></nav></header>
+  <main>
+    <div class="hero">
+      <div><div class="rm-eyebrow">Matchday intelligence / RefMatch</div><h1>A better fit.<br><span class="accent">A clearer call.</span></h1><p>Every fixture has its own rhythm. RefMatch profiles the match, ranks eligible referees, and explains the fit before kickoff.</p><div class="actions"><a class="rm-button" href="#film">Watch the 15-second film <span aria-hidden="true">↗</span></a><a class="rm-button rm-button--secondary" href="logos/refmatch-primary.svg" download>Get the logo ↓</a></div></div>
+      <div class="emblem" aria-label="The RefMatch mark combines a pitch outline, a referee, and a checkmark"><div class="top"><span>THE MATCHMARK</span><span>01 / REFMATCH</span></div><div class="orbit"></div><img src="logos/mark-dark.svg" alt="RefMatch mark"><div class="bottom"><span>FIT, MADE CLEAR.</span><span>BEFORE KICKOFF ↗</span></div></div>
+    </div>
+    <div class="intro-line"><span>Profile the fixture</span><span>Rank the referees</span><span>Explain the recommendation</span></div>
+    <section id="film">
+      <div class="section-heading"><div><div class="rm-eyebrow">01 / In motion</div><h2>Fifteen seconds.<br>The whole idea.</h2></div><p>A tactical pitch becomes a shortlist. A shortlist becomes a clear recommendation. Original motion graphics and a composed sonic signature.</p></div>
+      <div class="film"><video controls playsinline preload="metadata" poster="../video/refmatch-poster.png" aria-label="RefMatch fifteen-second explainer"><source src="../video/refmatch-15s.mp4" type="video/mp4"><track kind="captions" src="../video/refmatch-captions.vtt" srclang="en" label="English">Your browser does not support embedded video. <a href="../video/refmatch-15s.mp4">Download the film</a>.</video></div>
+      <div class="film-meta"><span>1920 × 1080 · 60 fps · Original stereo sound · Synthetic demonstration</span><span><a href="../video/refmatch-15s.mp4" download>Download MP4 ↓</a> &nbsp; / &nbsp; <a href="../video/">Explore the animation ↗</a></span></div>
+    </section>
+    <section id="identity">
+      <div class="section-heading"><div><div class="rm-eyebrow">02 / The identity</div><h2>A mark with a purpose.</h2></div><p>Pitch boundaries frame a central official and a decisive fit check. A simple silhouette, made to work on a scoreboard or a phone.</p></div>
+      <div class="logo-grid">
+        <article class="logo-tile"><div class="logo-art dark"><img src="logos/refmatch-primary.svg" alt="Mint and chalk RefMatch logo on midnight"></div><div class="logo-meta"><span>Primary / Midnight</span><a href="logos/refmatch-primary.svg" download>SVG ↓</a></div></article>
+        <article class="logo-tile"><div class="logo-art mint"><img src="logos/refmatch-dark.svg" alt="Midnight RefMatch logo on mint"></div><div class="logo-meta"><span>Reverse / Mint</span><a href="logos/refmatch-dark.svg" download>SVG ↓</a></div></article>
+        <article class="logo-tile"><div class="logo-art chalk"><img src="logos/refmatch-black.svg" alt="Black RefMatch logo on chalk"></div><div class="logo-meta"><span>Single colour</span><a href="logos/refmatch-black.svg" download>SVG ↓</a></div></article>
+      </div>
+      <div class="principles"><div><div class="no">01</div><h3>The pitch.</h3><p>Open stadium brackets place the identity firmly in football.</p></div><div><div class="no">02</div><h3>The official.</h3><p>A central dot puts the referee at the heart of the decision.</p></div><div><div class="no">03</div><h3>The fit.</h3><p>An ascending check expresses a recommendation with a reason.</p></div></div>
+    </section>
+    <section id="system">
+      <div class="section-heading"><div><div class="rm-eyebrow">03 / The visual system</div><h2>Composed. Clear. Match-ready.</h2></div><p>Midnight provides focus. Mint marks the recommendation. Chalk keeps the information readable. Click a colour to copy its value.</p></div>
+      <div class="palette">
+        <button class="swatch" style="background:#081C26;color:#F3F5EF" data-color="#081C26" aria-label="Copy Midnight colour #081C26"><b>Midnight</b><span>#081C26 ↗</span></button>
+        <button class="swatch" style="background:#B6F36A;color:#081C26" data-color="#B6F36A" aria-label="Copy Match Mint colour #B6F36A"><b>Match Mint</b><span>#B6F36A ↗</span></button>
+        <button class="swatch" style="background:#F3F5EF;color:#081C26" data-color="#F3F5EF" aria-label="Copy Chalk colour #F3F5EF"><b>Chalk</b><span>#F3F5EF ↗</span></button>
+        <button class="swatch" style="background:#65D8CA;color:#081C26" data-color="#65D8CA" aria-label="Copy Signal Teal colour #65D8CA"><b>Signal Teal</b><span>#65D8CA ↗</span></button>
+        <button class="swatch" style="background:#F0C786;color:#081C26" data-color="#F0C786" aria-label="Copy Caution colour #F0C786"><b>Caution</b><span>#F0C786 ↗</span></button>
+      </div>
+      <div class="system-grid">
+        <div class="type-sample"><span class="rm-eyebrow">The typography</span><div class="type-display">The right fit.<br>Before kickoff.</div><div class="font-name">Space Grotesk / Display</div><hr class="rm-rule"><p>Clear explanations need clear type. Manrope carries the detail, from match profiles to the reasons behind a recommendation.</p><div class="font-name" style="margin-top:18px">Manrope / Interface & body</div></div>
+        <article class="rm-card ranking" aria-label="Illustrative recommendation card"><div class="top"><span class="rm-chip rm-chip--accent">01 / BEST FIT</span><span class="rm-eyebrow">Synthetic demo</span></div><div class="top"><h3 class="name">Referee A</h3><div class="rm-score">87<small>%</small></div></div><ul><li><span>High-intensity matches</span><strong>42</strong></li><li><span>Consistency</span><strong>92 / 100</strong></li><li><span>Rest period</span><strong>4 days</strong></li></ul><span class="rm-chip">✓ Neutrality checked</span><p class="note">Illustrative values for the brand concept. No live scoring is connected.</p></article>
+      </div>
+      <div class="use"><div><strong>Built to carry into the product.</strong><p>Reusable CSS variables, dark and light themes, component styles, and JSON design tokens.</p><code>&lt;link rel="stylesheet" href="brand/theme.css"&gt;</code></div><a class="rm-button rm-button--secondary" href="theme.css" download>Download theme CSS ↓</a></div>
+    </section>
+  </main>
+  <footer><span>RefMatch / Visual identity v1.0</span><span>The right fit. Before kickoff.</span></footer>
+</div>
+<div class="live" role="status" aria-live="polite" id="status"></div>
+<script>
+  const toggle=document.querySelector('#toggle'),root=document.documentElement;
+  toggle.addEventListener('click',()=>{const light=root.dataset.theme!=='light';root.dataset.theme=light?'light':'dark';toggle.textContent=light?'Dark mode ↗':'Light mode ↗';toggle.setAttribute('aria-pressed',String(light));document.querySelector('#header-logo').src=light?'logos/refmatch-dark.svg':'logos/refmatch-primary.svg';});
+  let noticeTimer;
+  document.querySelectorAll('[data-color]').forEach(button=>button.addEventListener('click',async()=>{const status=document.querySelector('#status');try{await navigator.clipboard.writeText(button.dataset.color);status.textContent=`Copied ${button.dataset.color}`;}catch{status.textContent=button.dataset.color;}status.classList.add('show');clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>status.classList.remove('show'),2200);}));
+</script>
+</body>
+</html>

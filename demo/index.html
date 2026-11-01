@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#081C26"><title>RefMatch — Matchweek committee</title>
+  <meta name="description" content="Plan a Premier League matchweek with three years of evidence, explainable referee rankings and a complete weekly allocation.">
+  <link rel="icon" type="image/svg+xml" href="../brand/logos/app-icon.svg">
+  <link rel="stylesheet" href="../brand/theme.css"><link rel="stylesheet" href="demo.css"><link rel="stylesheet" href="weekly.css">
+  <script type="module" src="weekly-app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to planner</a>
+  <header class="app-header"><div class="shell header-inner"><a href="../" aria-label="RefMatch home"><img src="../brand/logos/refmatch-primary.svg" width="180" height="40" alt="RefMatch"></a><nav><a href="historical.html">2017/18 archive</a><span class="committee-badge">Committee workspace</span></nav></div></header>
+  <main id="main" class="shell">
+    <div class="intro"><div><p class="eyebrow">Premier League · Weekly referee planning</p><h1>One matchweek.<br><span>Every assignment.</span></h1><p class="lead">Choose the next round. Review three years of evidence. Build an explainable referee plan for the whole week.</p></div><div class="intro-note"><span class="note-dot"></span><p>One referee per fixture. One assignment per referee in the round. Your committee reviews the evidence and approves the draft.</p></div></div>
+    <div id="loading" role="status">Loading verified fixtures and match history…</div>
+    <p id="error" class="error-banner" role="alert" hidden></p>
+    <div id="workspace" hidden>
+      <form id="week-controls" class="week-controls">
+        <label>Season<select id="season-select" aria-label="Season"></select></label>
+        <label>Matchweek<select id="week-select" aria-label="Matchweek"></select></label>
+        <label>Evidence cutoff · UTC<input id="cutoff" type="date" required></label>
+        <button id="generate" type="button" class="primary-action">Regenerate draft ↗</button>
+      </form>
+      <div class="source-bar"><p id="source-status"></p><button id="refresh-data" class="reset-button" type="button">Refresh source data</button></div>
+      <div class="review-steps" aria-label="Committee workflow">
+        <div class="review-step"><span>01</span><strong>Review the week</strong><small>Pick any fixture and read its shortlist.</small></div>
+        <div class="review-step"><span>02</span><strong>Explain the fit</strong><small>Check context, evidence and reason for the lead.</small></div>
+        <div class="review-step"><span>03</span><strong>Confirm the checks</strong><small>Record conflicts, availability and local approval.</small></div>
+      </div>
+      <div id="summary" class="week-summary" aria-live="polite"></div>
+      <aside id="decision-summary" class="decision-summary" aria-live="polite">
+        <div class="decision-header">
+          <p class="eyebrow">Decision summary</p>
+          <button id="focus-selected-match" type="button" class="secondary-action small-action">Focus selected match</button>
+        </div>
+        <div class="decision-body">
+          <div>
+            <p class="decision-kicker">Selected fixture</p>
+            <h3 id="decision-fixture">—</h3>
+          </div>
+          <div class="decision-metrics">
+            <div class="metric-pill"><span>Assigned referee</span><strong id="decision-referee">—</strong></div>
+            <div class="metric-pill"><span>Fit score</span><strong id="decision-fit">—</strong></div>
+            <div class="metric-pill"><span>Individual rank</span><strong id="decision-rank">—</strong></div>
+          </div>
+        </div>
+        <ul id="decision-reasons" class="decision-reasons"></ul>
+        <p id="decision-evidence" class="decision-evidence"></p>
+        <p id="decision-risk" class="decision-risk"></p>
+      </aside>
+      <nav class="workspace-nav"><a href="#week-title">Weekly allocation ↓</a><a href="#evidence-title">Match evidence ↓</a><a href="#roster-title">Committee checks ↓</a><a href="#approval-title">Review & export ↓</a></nav>
+      <section aria-labelledby="week-title" class="weekly-section">
+        <div class="section-title"><div><p class="eyebrow">01 / Plan the round</p><h2 id="week-title">The weekly allocation.</h2></div><p>The draft maximizes filled fixtures, then total fit, while using each referee once. Select a match to inspect its shortlist.</p></div>
+        <div id="fixture-board" class="fixture-board"></div>
+        <p id="allocation-note" class="muted" role="status"></p>
+      </section>
+      <section aria-labelledby="evidence-title" class="weekly-section">
+        <div class="section-title"><div><p class="eyebrow">02 / Understand the choice</p><h2 id="evidence-title">Evidence before kickoff.</h2></div><p>Scores use earlier records and fixed rules. A score out of 100 describes experimental fit; it is not a probability or a referee quality rating.</p></div>
+        <div id="match-heading" class="match-heading"></div>
+        <div id="team-briefs" class="team-briefs"></div>
+        <details class="table-details"><summary>Previous meetings and their referees</summary><div id="previous-meetings"></div></details>
+        <div class="weekly-comparison"><div class="ranking-panel"><div class="panel-heading"><strong>Ranked candidates</strong><span id="candidate-count"></span></div><div id="weekly-rankings"></div></div><article id="candidate-evidence" class="detail-panel"></article></div>
+        <div class="comparison-pickers"><label>Compare candidate<select id="compare-a"></select></label><label>With<select id="compare-b"></select></label></div>
+        <div id="weekly-comparison" class="table-scroll"></div>
+        <details class="table-details"><summary>Excluded candidates and reasons</summary><div id="weekly-exclusions"></div></details>
+        <details class="table-details"><summary>Current-season table at the cutoff</summary><div id="weekly-table" class="table-scroll"></div><p>Reconstructed points, goal difference and goals scored. Exact ties share a position; this is a planning table, not a certified final table.</p></details>
+      </section>
+      <section aria-labelledby="roster-title" class="weekly-section">
+        <div class="section-title"><div><p class="eyebrow">03 / Apply committee knowledge</p><h2 id="roster-title">People and constraints.</h2></div><p>Public records do not establish availability or eligibility. Record committee checks, team conflicts, and other duties before approval.</p></div>
+        <div class="policy-row"><label>Minimum calendar days between duties<input id="minimum-gap" type="number" min="0" max="14" value="3"></label><p>Committee setting; defaults to 3 days. Each referee receives at most one match in this round. Observed league appointments, entered duties and other locally approved rounds are checked.</p></div>
+        <p class="muted">“Checks confirmed” means panel eligibility, fitness, conflict declarations and other competition duties have been reviewed. Names retain the source’s abbreviations. Changing these inputs clears locks and local approvals.</p>
+        <h3 class="roster-subheading">Assigned this week</h3>
+        <div id="roster" class="roster-grid">
+          <div id="roster-assigned" class="roster-grid"></div>
+          <details id="roster-other-details" class="roster-more">
+            <summary id="roster-other-summary">Other referees</summary>
+            <div id="roster-other" class="roster-grid"></div>
+          </details>
+        </div>
+      </section>
+      <section aria-labelledby="approval-title" class="weekly-section">
+        <div class="section-title"><div><p class="eyebrow">04 / Record the decision</p><h2 id="approval-title">Review. Approve. Export.</h2></div><p>Drafts and committee settings are saved in this browser. Local approval records the review; it does not submit official appointments.</p></div>
+        <div class="approval-panel"><p id="approval-status" role="status"></p><div class="approval-controls"><label>Reviewer name<input id="reviewer" type="text" maxlength="100" placeholder="Committee reviewer"></label><button id="approve" type="button" class="primary-action">Approve locally</button><button id="download-week" type="button" class="secondary-action">Download evidence brief ↓</button></div><p id="storage-status" class="muted"></p></div>
+      </section>
+      <aside class="method-note"><strong>Three years of evidence. Every assumption visible.</strong><p>A rolling 36-month window ends at 00:00 UTC on the planning date. Recent team patterns contribute 60%; historical patterns contribute 40%, with a 365-day half-life. The scorer uses fouls (25%), recorded cards (20%), shots (15%), comparable table situations (20%), evidence volume (10%) and team-assignment spacing (10%). Five complete earlier matches per team and referee are required.</p><p>Standings use the current season only. Promoted clubs can have limited Premier League history. Passes, duels and decision accuracy are not available in this source. Similar appointments measure exposure, not successful decisions. The minimum gap, spacing preferences and weights are app assumptions.</p><p>Source records are captured when refreshed; they do not archive the exact time a historical correction was published. Result dates control the evidence cutoff. The exported brief includes the source checksums, evidence, model rules, committee inputs and draft.</p><p><a href="https://www.football-data.co.uk/data.php" target="_blank" rel="noopener noreferrer">Statistics: Football-Data.co.uk</a> · <a href="https://www.football-data.co.uk/notes.txt" target="_blank" rel="noopener noreferrer">Statistic definitions</a> · <a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener noreferrer">Fixtures: Fantasy Premier League</a></p></aside>
+    </div>
+      <section class="assistant-section" aria-labelledby="assistant-title">
+        <div class="section-title"><div><p class="eyebrow">Your committee assistant</p><h2 id="assistant-title">Ask about the evidence.</h2></div><p>Explore the weekly plan, compare candidates, or try a hypothetical exclusion. Committee confirmations and approval stay in your hands.</p></div>
+        <div class="assistant-panel"><div class="assistant-heading"><strong>RefMatch Copilot</strong><span id="assistant-status" role="status">Connecting assistant…</span></div>
+          <div id="assistant-messages" class="assistant-messages" role="log" aria-label="Conversation" aria-live="polite"></div>
+          <div class="assistant-suggestions"><button type="button" data-prompt="Explain the current weekly allocation and its evidence coverage." disabled>Explain this week</button><button type="button" data-prompt="For the first fixture in this week, compare its top two ranked candidates and explain the weekly selection." disabled>Compare two candidates</button></div>
+          <form id="assistant-form" class="assistant-form"><label for="assistant-input" class="sr-only">Ask RefMatch</label><textarea id="assistant-input" rows="2" maxlength="1200" placeholder="Why was this referee selected for the week?" disabled></textarea><button id="assistant-send" type="submit" disabled>Send ↗</button><button id="assistant-stop" type="button" hidden>Stop</button></form>
+          <p class="assistant-caption">Responses grounded in calculated results. Chat cannot confirm operational checks or approve assignments.</p>
+        </div>
+      </section>
+  </main>
+  <footer class="app-footer shell"><span>RefMatch 2.0 · Matchweek committee planner</span><a href="../">About the project ↗</a></footer>
+</body></html>

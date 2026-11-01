@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#081C26">
+  <meta name="description" content="RefMatch is an early-stage referee assignment concept, exploring transparent profile comparisons using real Premier League 2017/18 data.">
+  <meta property="og:title" content="RefMatch — The right fit. Before kickoff.">
+  <meta property="og:description" content="Explore RefMatch's interactive draft: real historical football records, traceable profile fit, and interactive comparisons.">
+  <meta property="og:type" content="website">
+  <title>RefMatch — The right fit. Before kickoff.</title>
+  <link rel="icon" type="image/svg+xml" href="brand/logos/app-icon.svg">
+  <link rel="stylesheet" href="brand/theme.css">
+  <link rel="stylesheet" href="site.css">
+  <script type="module" src="site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="site-logo" aria-label="RefMatch home"><img src="brand/logos/refmatch-primary.svg" alt="RefMatch" width="200" height="44"></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">＋</span></button>
+      <nav id="site-nav" aria-label="Main navigation">
+        <a href="demo/">Try the demo</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#film">The film <span class="nav-duration">15s</span></a>
+        <a href="#founder">The founder</a>
+        <a class="nav-contact" href="mailto:mohammed.roqa@mroqa.site?subject=Let%27s%20talk%20about%20RefMatch">Let’s talk <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="status-label"><span class="status-dot"></span> Football intelligence, before kickoff</div>
+        <h1 id="hero-title">The right fit.<br><span>Before kickoff.</span></h1>
+        <p class="hero-description">Plan the next Premier League matchweek with three years of evidence, explainable referee rankings, and a complete weekly allocation for committee review.</p>
+        <div class="hero-actions">
+          <a class="rm-button" href="demo/">Open the matchweek planner <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#film" data-watch>Watch the film <span aria-hidden="true">↘</span></a>
+        </div>
+        <div class="hero-note"><span class="note-mark" aria-hidden="true">◌</span><span>Real historical records. Experimental profile fit.<br>Availability and conflicts remain unknown.</span></div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="assignment-board">
+          <div class="board-top"><span class="micro-label">Next-match assignment</span><span class="demo-label">2017/18 replay</span></div>
+          <div class="fixture"><span class="team-mark" aria-hidden="true">T</span><div><span class="fixture-type">10 February 2018 / Premier League</span><h2>Tottenham <span>×</span> Arsenal</h2></div><span class="team-mark team-mark--teal" aria-hidden="true">A</span></div>
+          <div class="risk-strip" aria-label="Earlier match-volume percentiles out of 100"><div><span>Foul percentile</span><strong>42<small>/100</small></strong></div><div><span>Pass percentile</span><strong>73<small>/100</small></strong></div><div><span>Card percentile</span><strong>57<small>/100</small></strong></div></div>
+          <div class="shortlist-heading"><span class="micro-label">Proposed shortlist</span><span>Calculated profile fit</span></div>
+          <div class="shortlist" role="group" aria-label="Explore historical referee profiles">
+            <button class="candidate is-selected is-best" data-candidate="r384965" aria-pressed="true"><span class="candidate-rank">01</span><span class="candidate-identity"><strong>Michael Oliver</strong><small class="candidate-status">Recommended for the next match</small></span><span class="candidate-score">88<small>%</small></span><span class="candidate-arrow" aria-hidden="true">↗</span></button>
+            <button class="candidate" data-candidate="r385909" aria-pressed="false"><span class="candidate-rank">02</span><span class="candidate-identity"><strong>Mike Dean</strong><small class="candidate-status">Historical candidate</small></span><span class="candidate-score">82<small>%</small></span><span class="candidate-arrow" aria-hidden="true">↗</span></button>
+            <button class="candidate" data-candidate="r384888" aria-pressed="false"><span class="candidate-rank">03</span><span class="candidate-identity"><strong>Martin Atkinson</strong><small class="candidate-status">Historical candidate</small></span><span class="candidate-score">81<small>%</small></span><span class="candidate-arrow" aria-hidden="true">↗</span></button>
+          </div>
+          <div class="fit-reason" aria-live="polite" aria-atomic="true"><div><span class="reason-check" aria-hidden="true">✓</span><strong id="reason-title">Why Michael Oliver?</strong><span class="neutral-label">Checks unknown</span></div><p id="reason-copy">Based on earlier recorded match volumes. Inspect the app for source evidence.</p><small id="reason-flag">Actual availability and declared conflicts are unknown.</small></div>
+          <label class="what-if"><input type="checkbox" id="exclude-leading"><span class="switch" aria-hidden="true"></span><span>Exclude Michael Oliver from this scenario?</span></label>
+          <p class="board-disclaimer">Experimental fit, not a quality rating. <a href="demo/">Open the calculated demo ↗</a></p>
+          <p class="sr-only" id="ranking-status" role="status"></p>
+        </div>
+        <div class="board-caption"><span>Profile</span><i aria-hidden="true"></i><span>Rank</span><i aria-hidden="true"></i><span>Explain</span></div>
+      </div>
+    </section>
+
+    <div class="principle-strip"><div class="container"><span><i aria-hidden="true">✓</i> Constraints considered</span><span><i aria-hidden="true">✓</i> Reasons made visible</span><span><i aria-hidden="true">✓</i> Human judgement supported</span></div></div>
+
+    <section class="section container" id="how-it-works" aria-labelledby="how-title">
+      <div class="section-heading"><div><div class="rm-eyebrow">01 / Hackathon demo priorities</div><h2 id="how-title">Three pieces.<br>One explainable demo.</h2></div><p>Release 2.0 combines the 2026/27 schedule, a rolling three-year evidence window, and an organized committee workflow.</p></div>
+      <div class="steps">
+        <article class="step"><div class="step-top"><span>01</span><svg viewBox="0 0 56 56" aria-hidden="true"><rect x="6" y="9" width="44" height="38" rx="3"/><path d="M28 9v38M6 20h9v16H6m44-16h-9v16h9"/><circle cx="28" cy="28" r="7"/></svg></div><h3>Scoring + rules.</h3><p>Rank candidates with traceable factors, apply committee constraints, and generate a weekly allocation with one fixture per referee.</p><div class="step-foot">Deterministic local engine <span aria-hidden="true">↗</span></div></article>
+        <article class="step"><div class="step-top"><span>02</span><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M8 14h30M8 28h23M8 42h16"/><circle cx="46" cy="14" r="4"/><path d="m40 29 4 4 8-9"/></svg></div><h3>Real match records.</h3><p>Load the 2026/27 fixtures and analyze Premier League results and referee statistics from the preceding 36 months, with visible source coverage.</p><div class="step-foot">Historical data, explicit limits <span aria-hidden="true">↗</span></div></article>
+        <article class="step"><div class="step-top"><span>03</span><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M11 9h34a5 5 0 0 1 5 5v23a5 5 0 0 1-5 5H25L13 50v-8h-2a5 5 0 0 1-5-5V14a5 5 0 0 1 5-5Z"/><path d="m16 26 7 7 16-16"/></svg></div><h3>Interactive web UI.</h3><p>Explore the calculated shortlist, inspect each rationale, and re-rank when the scenario candidate pool changes.</p><div class="step-foot">HTML + CSS + JavaScript <span aria-hidden="true">↗</span></div></article>
+      </div>
+    </section>
+
+    <section class="film-section" id="film" aria-labelledby="film-title">
+      <div class="container">
+        <div class="section-heading"><div><div class="rm-eyebrow">02 / The idea in motion</div><h2 id="film-title">From fixture to fit.<br>In 15 seconds.</h2></div><a class="download-link" href="video/refmatch-15s.mp4" download>Download the film <span aria-hidden="true">↓</span></a></div>
+        <div class="film-frame"><video id="refmatch-film" controls playsinline preload="metadata" poster="video/refmatch-poster.png" aria-label="15-second RefMatch concept film"><source src="video/refmatch-15s.mp4" type="video/mp4"><track kind="captions" src="video/refmatch-captions.vtt" srclang="en" label="English">Your browser does not support embedded video. <a href="video/refmatch-15s.mp4">Download the RefMatch film</a>.</video></div>
+        <div class="film-details"><span><span class="status-dot"></span> Profile. Rank. Explain.</span><span>15 seconds · Original sound · Synthetic demonstration</span></div>
+        <p class="sr-only" id="playback-status" role="status"></p>
+        <details class="transcript"><summary>Read the film transcript <span aria-hidden="true">＋</span></summary><p><strong>0–4 seconds:</strong> Profile the teams, referee strengths, fixture context, and constraints. <strong>4–8 seconds:</strong> Rank eligible referees by fit. <strong>8–12 seconds:</strong> Explain the recommendation with experience, consistency, and law context. <strong>12–15 seconds:</strong> RefMatch. The right fit. Before kickoff. All data shown is synthetic.</p></details>
+      </div>
+    </section>
+
+    <section class="section container clarity" aria-labelledby="clarity-title">
+      <div><div class="rm-eyebrow">03 / Demo scope</div><h2 id="clarity-title">A focused demo.<br>Clear boundaries.</h2><p>The <a href="demo/">committee planner</a> covers the 2026/27 season. This landing-page board preserves the original <a href="demo/historical.html">2017/18 historical example</a>. Both show the evidence behind their calculations.</p><a class="text-link" href="demo/">Explore the live calculation <span aria-hidden="true">↗</span></a></div>
+      <div class="clarity-list"><article><span>01</span><div><h3>Real scoring logic.</h3><p>A deterministic engine combines recent form, playing patterns and earlier referee assignments, including experience with comparable league stages and table stakes.</p></div></article><article><span>02</span><div><h3>Ask and compare.</h3><p>Ask why one referee leads, compare their score factors side by side, or ask RefMatch to exclude a candidate and show the new result.</p></div></article><article><span>03</span><div><h3>Focused demo scope.</h3><p>The app uses a saved real-data snapshot. Committee members record availability, conflicts and eligibility checks, review the weekly draft, and export the evidence. Fit is an experimental score.</p></div></article></div>
+    </section>
+
+    <section class="founder-section" id="founder" aria-labelledby="founder-title">
+      <div class="container founder-layout">
+        <div class="founder-visual"><div class="founder-photo-wrap"><span class="portrait-caption">THE PERSON BEHIND REFMATCH</span><img src="assets/mohammed-roqa-portrait.webp" alt="Mohammed Roqa, founder of RefMatch" width="256" height="309" loading="lazy"><div class="portrait-bottom"><span>Engineer.<br>Technical founder.</span><img src="brand/logos/mark-dark.svg" alt="" width="42" height="42"></div></div></div>
+        <div class="founder-copy"><div class="rm-eyebrow">04 / Meet the founder</div><h2 id="founder-title">Mohammed Roqa.</h2><p class="founder-lead">Engineering useful ideas<br>into thoughtful products.</p><p>Mohammed is a technology engineer and technical founder based in Sandton, South Africa. As founder and CEO of Lync Digital, his work spans cloud platforms, automation, and AI applications.</p><p>He holds an MSc in Information Systems from Lund University and brings experience across product development, enterprise infrastructure, and systems integration.</p><div class="founder-expertise"><span>Cloud & infrastructure</span><span>Automation</span><span>Applied AI</span></div><div class="founder-links"><a class="rm-button" href="https://mroqa.site/" target="_blank" rel="noopener noreferrer">Explore Mohammed’s work <span aria-hidden="true">↗</span></a><a class="text-link" href="https://www.linkedin.com/in/mroqa" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div><p class="founder-source">Background and portrait from <a href="https://mroqa.site/" target="_blank" rel="noopener noreferrer">mroqa.site</a>.</p></div>
+      </div>
+    </section>
+
+    <section class="contact-section" aria-labelledby="contact-title"><div class="container contact-inner"><div><div class="rm-eyebrow">Let’s build the conversation</div><h2 id="contact-title">A better fit starts<br>with a conversation.</h2><p>Working in officiating, football operations, or sports analytics? Share your perspective with the founder.</p></div><a class="contact-button" href="mailto:mohammed.roqa@mroqa.site?subject=Let%27s%20talk%20about%20RefMatch">Let’s talk RefMatch <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="site-footer container"><div><a href="#" aria-label="RefMatch home"><img src="brand/logos/refmatch-primary.svg" alt="RefMatch" width="170" height="37"></a><p>Explainable referee assignment.</p></div><nav aria-label="Footer"><a href="#how-it-works">How it works</a><a href="#founder">The founder</a><a href="mailto:mohammed.roqa@mroqa.site?subject=RefMatch">Contact</a></nav><p class="footer-note">An early-stage concept.<br>Planner: 2026/27 fixtures and three years of evidence.<br>Concept film: synthetic illustrations.</p></footer>
+</body>
+</html>
