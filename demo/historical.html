@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#081C26">
+  <meta name="description" content="Plan the next referee assignment using team form, playing tendencies, league stakes and earlier referee appointments.">
+  <title>RefMatch — Referee assignment workspace</title>
+  <link rel="icon" type="image/svg+xml" href="../brand/logos/app-icon.svg">
+  <link rel="stylesheet" href="../brand/theme.css">
+  <link rel="stylesheet" href="demo.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to demo</a>
+  <header class="app-header">
+    <div class="shell header-inner">
+      <a href="../" aria-label="RefMatch home"><img src="../brand/logos/refmatch-primary.svg" width="190" height="44" alt="RefMatch"></a>
+      <a class="back-link" href="../">← Back to the story</a>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <div class="intro">
+      <div><p class="eyebrow">Assignment planner · Real 2017/18 data</p><h1>Learn from the past.<br><span>Assign the next.</span></h1><p class="lead">Understand both teams, the stakes of their next meeting, and which referee has the most relevant earlier experience. Review the evidence, compare candidates, and make a draft proposal.</p></div>
+      <div class="intro-note"><span class="note-dot" aria-hidden="true"></span><p>Historical replay: plan as if kickoff has not happened. Only records before your planning date are used. Real availability and conflicts still need confirmation.</p></div>
+    </div>
+
+    <div class="control-bar">
+      <label for="fixture-select"><span>01 / Next fixture to plan</span><select id="fixture-select"></select></label>
+      <div class="control-hint"><strong>Before kickoff</strong><span>Team history → match demands → proposed referee</span></div>
+    </div>
+
+    <details class="meeting-finder"><summary>Or choose two teams and find their next meeting</summary><form id="meeting-form" class="meeting-form"><label>First team<select id="planning-first"></select></label><label>Second team<select id="planning-second"></select></label><label>Planning date (UTC)<input type="date" id="planning-date" min="2017-08-11" max="2018-05-13" required></label><button type="submit" class="primary-action">Find next meeting</button></form><p id="planning-error" role="alert"></p></details>
+
+    <p id="fixture-evidence" class="fixture-evidence"></p>
+
+    <nav class="workspace-nav" aria-label="Workspace sections"><a href="#brief-title">Team & match brief ↓</a><a href="#decision-title">Recommended referee ↓</a><a href="#proposal-title">Draft assignment ↓</a><a href="#assistant-title">Ask RefMatch ↓</a></nav>
+
+    <section class="brief-section" aria-labelledby="brief-title">
+      <div class="section-title"><div><p class="eyebrow">02 / Understand the assignment</p><h2 id="brief-title">Two teams. One match brief.</h2></div><p>Form, points, playing tendencies, and prior referees—all from matches completed before the planning date.</p></div>
+      <article id="match-brief" class="match-brief"></article>
+      <div id="team-profiles" class="comparison-cards team-profiles" aria-label="Team form and playing tendencies"></div>
+      <div class="brief-evidence-grid"><article class="brief-evidence"><h3>Previous meetings</h3><div id="head-to-head"></div></article><article class="brief-evidence"><h3>What this match asks of a referee</h3><div id="assignment-demands"></div></article></div>
+      <details class="table-details"><summary>Inspect the full table before the planning date</summary><div id="league-table" class="table-scroll"></div><p>3 points for a win, 1 for a draw. Ties use goal difference, then goals scored; exact ties share a position. Reconstructed from source results, excluding the whole planning day.</p></details>
+      <details class="table-details"><summary>Inspect the model’s match-volume inputs</summary><p>60% from each team’s latest five matches and 40% from their season histories. Shared matches are counted once within each sample. Percentiles compare those volumes with earlier league matches.</p><div id="risk-grid" class="risk-grid"></div></details>
+    </section>
+
+    <aside id="scenario-change" class="scenario-change" aria-labelledby="change-title" hidden>
+      <div class="panel-heading"><strong id="change-title"></strong><button type="button" id="undo-change" class="reset-button">Undo change</button></div>
+      <p id="change-summary"></p><ul id="change-rows"></ul><a href="#decision-title">Review the updated shortlist ↓</a>
+    </aside>
+
+
+
+    <section class="decision-section" aria-labelledby="decision-title">
+      <div class="section-title"><div><p class="eyebrow">03 / Match experience to demands</p><h2 id="decision-title">Recommended referee</h2></div><p>The ranking combines playing patterns, discipline, similar match contexts, and assignment history. Five earlier matches per team and referee are required.</p></div>
+      <div class="decision-grid">
+        <div class="ranking-panel"><div class="panel-heading"><span>Historical candidates</span><span id="eligible-count"></span></div><div id="ranking-list" class="ranking-list"></div></div>
+        <article id="detail-panel" class="detail-panel" aria-label="Selected referee explanation"></article>
+      </div>
+      <p id="ranking-status" class="sr-only" role="status"></p>
+    </section>
+
+    <section class="proposal-section" aria-labelledby="proposal-title"><div class="section-title"><div><p class="eyebrow">04 / Your decision</p><h2 id="proposal-title">Draft the assignment.</h2></div><p>Choose a candidate after reviewing the evidence. This records a local proposal for review.</p></div><div class="proposal-panel"><div id="proposal-summary" role="status"></div><div class="proposal-actions"><button type="button" id="propose-referee" class="primary-action">Propose selected referee</button><button type="button" id="download-proposal" class="reset-button" disabled>Download assignment brief</button></div><p class="proposal-note">Availability, declared conflicts, and official eligibility require confirmation. Changing the fixture, planning date, or candidate pool clears the draft. Reloading clears local proposals.</p></div></section>
+
+    <section class="comparison-section" aria-labelledby="compare-title">
+      <div class="section-title"><div><p class="eyebrow">Evidence, side by side</p><h2 id="compare-title">Why this referee?</h2></div><p>Compare historical evidence and contribution to fit. These cards reflect the selected fixture and scenario inclusion.</p></div>
+      <div class="comparison-controls"><label for="compare-left">First referee<select id="compare-left"></select></label><label for="compare-right">Second referee<select id="compare-right"></select></label></div>
+      <p id="comparison-summary" class="comparison-summary" role="status"></p>
+      <div id="comparison-cards" class="comparison-cards"></div>
+      <div id="comparison-factors" class="comparison-factors"></div>
+    </section>
+
+    <section class="assistant-section" aria-labelledby="assistant-title">
+      <div class="section-title"><div><p class="eyebrow">Your assignment assistant</p><h2 id="assistant-title">Ask. Change. Compare.</h2></div><p>Ask why one referee leads or try a hypothetical exclusion. The shortlist and comparison cards update together.</p></div>
+      <div class="assistant-panel">
+        <div class="assistant-heading"><div><strong>RefMatch Copilot</strong><span id="active-fixture"></span></div><span id="assistant-status" role="status">Connecting assistant…</span></div>
+        <div id="assistant-messages" class="assistant-messages" role="log" aria-label="Conversation with RefMatch" aria-live="polite" aria-relevant="additions text"><article class="chat-message assistant-message"><span class="chat-author">RefMatch</span><p>I can explain both teams’ form and table situation, inspect earlier referees, compare candidates, or plan the next meeting from a date you choose. Try one of the suggestions below.</p></article></div>
+        <div class="assistant-suggestions" aria-label="Suggested questions">
+          <button type="button" data-prompt="Explain both teams’ form, table stakes, and why the recommended referee fits this next match." disabled>Explain this match brief</button>
+          <button type="button" data-suggestion="compare" data-prompt="Compare the top two candidates." disabled>Compare the top two</button>
+          <button type="button" data-suggestion="change" data-prompt="Exclude the leading candidate from this scenario." disabled>Exclude the leading candidate</button>
+        </div>
+        <form id="assistant-form" class="assistant-form">
+          <label for="assistant-input" class="sr-only">Ask RefMatch</label>
+          <textarea id="assistant-input" rows="2" maxlength="1200" placeholder="Ask why a candidate leads or compare two referees" disabled></textarea>
+          <button id="assistant-send" type="submit" disabled>Send ↗</button>
+          <button id="assistant-stop" type="button" hidden>Stop</button>
+        </form>
+        <p class="assistant-caption">Real historical records · experimental fit scores · scenario changes do not establish real availability.</p>
+      </div>
+    </section>
+
+    <section class="audit-section" aria-labelledby="audit-title">
+      <div class="section-title"><div><p class="eyebrow">Rules and what-if</p><h2 id="audit-title">Change the candidate pool.<br>See what changes.</h2></div><p>Checked means included in this hypothetical comparison. Real availability and conflicts are unknown. Limited historical samples cannot be overridden.</p></div>
+      <div class="audit-grid">
+        <div class="audit-card"><div class="panel-heading"><span>Scenario inclusion</span><button type="button" class="reset-button" id="reset-availability">Reset</button></div><div id="availability-list" class="availability-list"></div></div>
+        <div class="audit-card"><div class="panel-heading"><span>Excluded from this fixture</span><span id="excluded-count"></span></div><div id="excluded-list" class="excluded-list"></div></div>
+      </div>
+    </section>
+
+    <aside class="method-note"><strong>Data and method</strong><p>Fit combines the teams’ recent and season-long playing patterns with referee appointment profiles, experience in similar league stages and table situations, and team-assignment spacing. Weights, minimum samples, and the 28-day team-spacing preference are app assumptions, not competition policy. A larger sample is not a measure of referee ability. Other competitions, current availability, private conflicts, and official eligibility are absent.</p><p id="data-provenance"></p><details class="history-evidence"><summary>Source quality notes</summary><p id="source-quality"></p></details><p>Historical sources: Pappalardo and Massucco’s <a href="https://figshare.com/articles/dataset/Events/7770599" target="_blank" rel="noopener noreferrer">Events</a> and <a href="https://figshare.com/articles/dataset/Matches/7770422" target="_blank" rel="noopener noreferrer">Matches</a> datasets, <a href="https://www.nature.com/articles/s41597-019-0247-7" target="_blank" rel="noopener noreferrer">described in Pappalardo et al. (2019)</a>, licensed <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Real names come from the attributed <a href="https://figshare.com/articles/dataset/Teams/7765310" target="_blank" rel="noopener noreferrer">Teams</a> and <a href="https://figshare.com/articles/dataset/Referees/8082665" target="_blank" rel="noopener noreferrer">Referees</a> files. Card tags use the <a href="https://figshare.com/articles/dataset/Mapping_of_tag_identifiers_to_tag_names/11743818" target="_blank" rel="noopener noreferrer">published tag mapping</a>. Profiles use only records before 00:00 UTC on the planning date. Target match outcomes and actual appointments are withheld. Card-tagged events and recorded event volumes are source-specific proxies.</p><p>Law context: <a href="https://www.theifab.com/laws/latest/the-referee/" target="_blank" rel="noopener noreferrer">Law 5 — The Referee ↗</a> describes referee duties and advantage; <a href="https://www.theifab.com/laws/latest/fouls-and-misconduct/" target="_blank" rel="noopener noreferrer">Law 12 — Fouls and Misconduct ↗</a> covers offences and sanctions. Neither sets referee assignment scores.</p></aside>
+  </main>
+  <footer class="app-footer shell"><span>RefMatch 1.2 · Next-match assignment planner · 2017/18 replay</span><a href="../">About the project ↗</a></footer>
+</body>
+</html>
