@@ -1,0 +1,3461 @@
+{
+  "id": "refmatch-audit-pilot",
+  "version": "1.0.0",
+  "rulesetVersion": "1.0.0",
+  "provenance": "Synthetic development cases; generated for RefMatch, expected answers authored separately from the validator. No real appointments or expert verification claimed.",
+  "expertReview": "pending",
+  "splitPolicy": "All 30 cases are public development cases. No private or unseen test set is claimed. Paired cases must remain together in any future split.",
+  "cases": [
+    {
+      "id": "valid-01",
+      "title": "Complete confirmed plan",
+      "group": "valid",
+      "pairId": "pair-1",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "valid",
+        "categories": []
+      }
+    },
+    {
+      "id": "invalid-01",
+      "title": "Single change from valid-01",
+      "group": "single_violation",
+      "pairId": "pair-1",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "unavailable",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "invalid",
+        "categories": [
+          "availability"
+        ]
+      }
+    },
+    {
+      "id": "unknown-01",
+      "title": "Required check unresolved: availability",
+      "group": "insufficient_information",
+      "pairId": null,
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "unknown",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "insufficient_information",
+        "categories": [
+          "availability"
+        ]
+      }
+    },
+    {
+      "id": "combined-01",
+      "title": "Interacting checks 1",
+      "group": "combined",
+      "pairId": null,
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": false,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "unavailable",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "invalid",
+        "categories": [
+          "eligibility",
+          "availability"
+        ]
+      }
+    },
+    {
+      "id": "valid-02",
+      "title": "Exact minimum gap",
+      "group": "valid",
+      "pairId": "pair-2",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": [
+              "2027-03-03"
+            ]
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "valid",
+        "categories": []
+      }
+    },
+    {
+      "id": "invalid-02",
+      "title": "Single change from valid-02",
+      "group": "single_violation",
+      "pairId": "pair-2",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": [
+              "2027-03-04"
+            ]
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "invalid",
+        "categories": [
+          "spacing"
+        ]
+      }
+    },
+    {
+      "id": "unknown-02",
+      "title": "Required check unresolved: conflict",
+      "group": "insufficient_information",
+      "pairId": null,
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": null,
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "insufficient_information",
+        "categories": [
+          "conflict"
+        ]
+      }
+    },
+    {
+      "id": "combined-02",
+      "title": "Interacting checks 2",
+      "group": "combined",
+      "pairId": null,
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [
+              "North"
+            ],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-03-01T00:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "invalid",
+        "categories": [
+          "conflict",
+          "cutoff"
+        ]
+      }
+    },
+    {
+      "id": "valid-03",
+      "title": "Conflict with an uninvolved team",
+      "group": "valid",
+      "pairId": "pair-3",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [
+              "Valley"
+            ],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "valid",
+        "categories": []
+      }
+    },
+    {
+      "id": "invalid-03",
+      "title": "Single change from valid-03",
+      "group": "single_violation",
+      "pairId": "pair-3",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [
+              "North"
+            ],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "invalid",
+        "categories": [
+          "conflict"
+        ]
+      }
+    },
+    {
+      "id": "unknown-03",
+      "title": "Required check unresolved: eligibility",
+      "group": "insufficient_information",
+      "pairId": null,
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": null,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "insufficient_information",
+        "categories": [
+          "eligibility"
+        ]
+      }
+    },
+    {
+      "id": "combined-03",
+      "title": "Interacting checks 3",
+      "group": "combined",
+      "pairId": null,
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": [
+              "2027-03-05"
+            ]
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "invalid",
+        "categories": [
+          "capacity",
+          "spacing"
+        ]
+      }
+    },
+    {
+      "id": "valid-04",
+      "title": "Uncited future evidence",
+      "group": "valid",
+      "pairId": "pair-4",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          },
+          {
+            "id": "E2",
+            "eventAt": "2027-03-02T15:00:00Z",
+            "knownAt": "2027-03-03T10:00:00Z",
+            "description": "Unused later record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "valid",
+        "categories": []
+      }
+    },
+    {
+      "id": "invalid-04",
+      "title": "Single change from valid-04",
+      "group": "single_violation",
+      "pairId": "pair-4",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          },
+          {
+            "id": "E2",
+            "eventAt": "2027-03-02T15:00:00Z",
+            "knownAt": "2027-03-03T10:00:00Z",
+            "description": "Unused later record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1",
+            "E2"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "invalid",
+        "categories": [
+          "cutoff"
+        ]
+      }
+    },
+    {
+      "id": "unknown-04",
+      "title": "Required check unresolved: spacing",
+      "group": "insufficient_information",
+      "pairId": null,
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": null
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "insufficient_information",
+        "categories": [
+          "spacing"
+        ]
+      }
+    },
+    {
+      "id": "combined-04",
+      "title": "Interacting checks 4",
+      "group": "combined",
+      "pairId": null,
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": null,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "unavailable",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "invalid",
+        "categories": [
+          "eligibility",
+          "availability"
+        ]
+      }
+    },
+    {
+      "id": "valid-05",
+      "title": "Latest note clears earlier restriction",
+      "group": "valid",
+      "pairId": "pair-5",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [
+          {
+            "text": "R1 is unavailable for F1.",
+            "recordedAt": "2027-02-27T09:00:00Z"
+          },
+          {
+            "text": "R1 is available for F1.",
+            "recordedAt": "2027-02-28T09:00:00Z"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "valid",
+        "categories": []
+      }
+    },
+    {
+      "id": "invalid-05",
+      "title": "Single change from valid-05",
+      "group": "single_violation",
+      "pairId": "pair-5",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [
+          {
+            "text": "R1 is unavailable for F1.",
+            "recordedAt": "2027-02-27T09:00:00Z"
+          },
+          {
+            "text": "R1 is unavailable for F1.",
+            "recordedAt": "2027-02-28T09:00:00Z"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "invalid",
+        "categories": [
+          "notes"
+        ]
+      }
+    },
+    {
+      "id": "unknown-05",
+      "title": "Required check unresolved: notes",
+      "group": "insufficient_information",
+      "pairId": null,
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [
+          {
+            "text": "R1 may be unavailable for F1; confirmation pending.",
+            "recordedAt": "2027-02-28T09:00:00Z"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "insufficient_information",
+        "categories": [
+          "notes"
+        ]
+      }
+    },
+    {
+      "id": "valid-06",
+      "title": "Unassigned referee has unknown checks",
+      "group": "valid",
+      "pairId": "pair-6",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": false,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": null,
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "valid",
+        "categories": []
+      }
+    },
+    {
+      "id": "invalid-06",
+      "title": "Single change from valid-06",
+      "group": "single_violation",
+      "pairId": "pair-6",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": false,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R4"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "invalid",
+        "categories": [
+          "eligibility"
+        ]
+      }
+    },
+    {
+      "id": "unknown-06",
+      "title": "Required check unresolved: notes (contradictory notes)",
+      "group": "insufficient_information",
+      "pairId": null,
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [
+          {
+            "text": "R1 is available for F1.",
+            "recordedAt": "2027-02-28T09:00:00Z"
+          },
+          {
+            "text": "R1 is unavailable for F1.",
+            "recordedAt": "2027-02-28T09:00:00Z"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "insufficient_information",
+        "categories": [
+          "notes"
+        ]
+      }
+    },
+    {
+      "id": "valid-07",
+      "title": "Future duty exactly at minimum gap",
+      "group": "valid",
+      "pairId": "pair-7",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": [
+              "2027-03-09"
+            ]
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "valid",
+        "categories": []
+      }
+    },
+    {
+      "id": "invalid-07",
+      "title": "Single change from valid-07",
+      "group": "single_violation",
+      "pairId": "pair-7",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": [
+              "2027-03-09"
+            ]
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "invalid",
+        "categories": [
+          "capacity"
+        ]
+      }
+    },
+    {
+      "id": "valid-08",
+      "title": "Committee note overrides roster",
+      "group": "valid",
+      "pairId": "pair-8",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "unavailable",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [
+          {
+            "text": "R1 is available for F1.",
+            "recordedAt": "2027-02-28T09:00:00Z"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "valid",
+        "categories": []
+      }
+    },
+    {
+      "id": "invalid-08",
+      "title": "Single change from valid-08",
+      "group": "single_violation",
+      "pairId": "pair-8",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "unavailable",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [
+          {
+            "text": "R1 is available for F1.",
+            "recordedAt": "2027-02-28T09:00:00Z"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "invalid",
+        "categories": [
+          "coverage"
+        ]
+      }
+    },
+    {
+      "id": "valid-09",
+      "title": "Evidence known one second before cutoff",
+      "group": "valid",
+      "pairId": "pair-9",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-28T23:59:59Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "valid",
+        "categories": []
+      }
+    },
+    {
+      "id": "invalid-09",
+      "title": "Single change from valid-09",
+      "group": "single_violation",
+      "pairId": "pair-9",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-03-01T00:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "invalid",
+        "categories": [
+          "cutoff"
+        ]
+      }
+    },
+    {
+      "id": "valid-10",
+      "title": "Cutoff-time note cannot change availability",
+      "group": "valid",
+      "pairId": "pair-10",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [
+          {
+            "text": "R1 is unavailable for F1.",
+            "recordedAt": "2027-03-01T00:00:00Z"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "valid",
+        "categories": []
+      }
+    },
+    {
+      "id": "invalid-10",
+      "title": "Single change from valid-10",
+      "group": "single_violation",
+      "pairId": "pair-10",
+      "split": "development",
+      "expertReview": "pending",
+      "input": {
+        "planningCutoff": "2027-03-01T00:00:00Z",
+        "minimumGapDays": 3,
+        "fixtures": [
+          {
+            "id": "F1",
+            "home": "North",
+            "away": "East",
+            "kickoff": "2027-03-06T15:00:00Z"
+          },
+          {
+            "id": "F2",
+            "home": "South",
+            "away": "West",
+            "kickoff": "2027-03-06T17:00:00Z"
+          },
+          {
+            "id": "F3",
+            "home": "Harbour",
+            "away": "Valley",
+            "kickoff": "2027-03-07T14:00:00Z"
+          }
+        ],
+        "referees": [
+          {
+            "id": "R1",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R2",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R3",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          },
+          {
+            "id": "R4",
+            "eligible": true,
+            "availability": {
+              "F1": "available",
+              "F2": "available",
+              "F3": "available"
+            },
+            "conflicts": [],
+            "otherDuties": []
+          }
+        ],
+        "committeeNotes": [
+          {
+            "text": "R1 is unavailable for F1.",
+            "recordedAt": "2027-02-28T23:59:59Z"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "E1",
+            "eventAt": "2027-02-20T15:00:00Z",
+            "knownAt": "2027-02-21T10:00:00Z",
+            "description": "Synthetic earlier appointment record."
+          }
+        ],
+        "proposedPlan": {
+          "assignments": [
+            {
+              "fixtureId": "F1",
+              "refereeId": "R1"
+            },
+            {
+              "fixtureId": "F2",
+              "refereeId": "R2"
+            },
+            {
+              "fixtureId": "F3",
+              "refereeId": "R3"
+            }
+          ],
+          "citedEvidence": [
+            "E1"
+          ],
+          "explanation": "All three fixtures have suitable, distinct referees. Committee checks support this proposed allocation."
+        }
+      },
+      "expected": {
+        "verdict": "invalid",
+        "categories": [
+          "notes"
+        ]
+      }
+    }
+  ]
+}
