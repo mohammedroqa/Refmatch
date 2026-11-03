@@ -1,0 +1,386 @@
+{
+  "version": "2.0.0",
+  "builtAt": "2026-11-03T03:43:13.281Z",
+  "files": [
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "assets/mohammed-roqa-portrait.webp",
+      "bytes": 6118,
+      "sha256": "b3556a61bd24268a21183c0b7237b465fe7fe9d3b78feef6cb2a011ecfbb5f8d"
+    },
+    {
+      "path": "brand/fonts/Manrope-OFL.txt",
+      "bytes": 4387,
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    {
+      "path": "brand/fonts/Manrope.ttf",
+      "bytes": 164700,
+      "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6"
+    },
+    {
+      "path": "brand/fonts/SpaceGrotesk-OFL.txt",
+      "bytes": 4402,
+      "sha256": "c6dec685825f73b18c20926fddc65e8315642e12986f15db0699170940a09efc"
+    },
+    {
+      "path": "brand/fonts/SpaceGrotesk.ttf",
+      "bytes": 136676,
+      "sha256": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72"
+    },
+    {
+      "path": "brand/index.html",
+      "bytes": 15376,
+      "sha256": "5cbd9233fe2b88541bb5314b66d164e314b77ea846fb40cf3d0d50dd28206655"
+    },
+    {
+      "path": "brand/logos/app-icon.png",
+      "bytes": 61384,
+      "sha256": "d43f106adbbb649ed6d1ed1b88c38e572296666973a8f90d46489d5dbff8bca8"
+    },
+    {
+      "path": "brand/logos/app-icon.svg",
+      "bytes": 515,
+      "sha256": "602a6c4350d7b09ad474151f341c2f195beff3b491858a2316599e2eaecc8f60"
+    },
+    {
+      "path": "brand/logos/mark-black.png",
+      "bytes": 48327,
+      "sha256": "e65c27ceb89bd5b225d38a16444abe73664c145f033f15ac0436462605889ce1"
+    },
+    {
+      "path": "brand/logos/mark-black.svg",
+      "bytes": 415,
+      "sha256": "efeccc9d1f1a0b02abe71c89ce62aea12b10308150662295bcdf36c5280bbb75"
+    },
+    {
+      "path": "brand/logos/mark-dark.png",
+      "bytes": 57337,
+      "sha256": "0fde6524f034e576c1fd6e397e75f391d99530e15a9d7070489374830cb74246"
+    },
+    {
+      "path": "brand/logos/mark-dark.svg",
+      "bytes": 415,
+      "sha256": "91301b758084ab93060ca942c658c9237f52fc3a8399d514fdfb17830efd71e8"
+    },
+    {
+      "path": "brand/logos/mark-primary.png",
+      "bytes": 57207,
+      "sha256": "42d8aa0c3313fa6c506e7b64329cf5b7c9774b77488ed5a913d21dd24c2c433a"
+    },
+    {
+      "path": "brand/logos/mark-primary.svg",
+      "bytes": 415,
+      "sha256": "4f15454bf3c0a900f8acf8e96b7e8961253f03abc47b54b7ca44f2f4b3bc1d42"
+    },
+    {
+      "path": "brand/logos/mark-white.png",
+      "bytes": 50155,
+      "sha256": "048503cce227374d267a66b996a107413cb8bf2d60ff8ac7462dafb2604690ad"
+    },
+    {
+      "path": "brand/logos/mark-white.svg",
+      "bytes": 415,
+      "sha256": "4459c9e0db41862eddce6941aa70634e88bc190b852054026a11d63d05c362dd"
+    },
+    {
+      "path": "brand/logos/refmatch-black.png",
+      "bytes": 53864,
+      "sha256": "dc68dc8eede65e1ee0fd72014d25d60968eb0dfc6ddd2c960eac7091d7c03624"
+    },
+    {
+      "path": "brand/logos/refmatch-black.svg",
+      "bytes": 11007,
+      "sha256": "b48910662f8cdd6973e59b229421cdde93756a849fdaaa91fcab72888806e809"
+    },
+    {
+      "path": "brand/logos/refmatch-dark.png",
+      "bytes": 67013,
+      "sha256": "4ae4d1991696d44fefa5a2171c0e80bdd348dbcaad373c12e38ecb96e42152d5"
+    },
+    {
+      "path": "brand/logos/refmatch-dark.svg",
+      "bytes": 11007,
+      "sha256": "3f62740ec9fac6fd0c911560f58467edd487b44ac20b35330ec3d60397e6824a"
+    },
+    {
+      "path": "brand/logos/refmatch-primary.png",
+      "bytes": 66780,
+      "sha256": "b53b72c2edb13018b6850de37aa6315ee07172aa5c8318217663f966e1e27b36"
+    },
+    {
+      "path": "brand/logos/refmatch-primary.svg",
+      "bytes": 11007,
+      "sha256": "b941516967b08b702c7421b8b8e51ffb964ec6485ab65482c9b3abb6426569bb"
+    },
+    {
+      "path": "brand/logos/refmatch-white.png",
+      "bytes": 56635,
+      "sha256": "c6f182f96e5cb60eec4aea4894b03317997fc634eee8d7cb312c2bc889c9ac25"
+    },
+    {
+      "path": "brand/logos/refmatch-white.svg",
+      "bytes": 11007,
+      "sha256": "a25a2949d7e5b1b44bad5b1acf22883b8d80ba2b4d9a0a1b4768ad0fbb6552c3"
+    },
+    {
+      "path": "brand/preview-desktop.png",
+      "bytes": 395873,
+      "sha256": "9ee77341d4c76af57b282dcebbad4bc1f8d5ef512c557143aab973f94678e40c"
+    },
+    {
+      "path": "brand/preview-light.png",
+      "bytes": 392615,
+      "sha256": "0f05e7a354f6ecb49bdddfd9728b0857c395e7525334ea84aa42994d73ad384e"
+    },
+    {
+      "path": "brand/preview-mobile.png",
+      "bytes": 296247,
+      "sha256": "3dce0c0e05352be438e727615c53ff97efda0a3bb9453730743b575d769a7cf2"
+    },
+    {
+      "path": "brand/theme.css",
+      "bytes": 3851,
+      "sha256": "229f3f6185cfa5c98caa12f35e77e991f21afb555b6d0632c3d85e03fd5c9438"
+    },
+    {
+      "path": "brand/tokens.json",
+      "bytes": 1212,
+      "sha256": "c91771423d44c652fc312cecfc91edc802f60405de41652277b5053f269465a8"
+    },
+    {
+      "path": "demo/app.js",
+      "bytes": 26316,
+      "sha256": "98d982371467a30c002b71679d640915be2e22658a414f6fbbcae59f50684a4b"
+    },
+    {
+      "path": "demo/assistant-contract.js",
+      "bytes": 1628,
+      "sha256": "a9dc0741976df7ec64827b0619ac18ee9b0075c05a2d7e27118968e6cc344b32"
+    },
+    {
+      "path": "demo/assistant-tools.js",
+      "bytes": 3314,
+      "sha256": "f0549d29f0c7b86684946856724d0fa1f8a8584e52a806abf8ea5c87ab49f005"
+    },
+    {
+      "path": "demo/build/copilot.js",
+      "bytes": 1180298,
+      "sha256": "fb1ad0a919a2142cbc3e4576e668081e629fb6a829e23c1e4fbd2cfc4bf3a56e"
+    },
+    {
+      "path": "demo/build/eval.js",
+      "bytes": 482830,
+      "sha256": "f67b9d4ba13cea3642605b2a0dee90d7cf3cb16d5eb18a7fdabded353a225f8b"
+    },
+    {
+      "path": "demo/build/weekly-copilot.js",
+      "bytes": 1183287,
+      "sha256": "2a72d12be173b6f70bc71637056e99aa8aca84e517b3aadf312f5571991b6563"
+    },
+    {
+      "path": "demo/calibration.snapshot.js",
+      "bytes": 1828,
+      "sha256": "036d7bdc53970e651bcb005f7d1676a2a00ad91a06ec57d2a3ed349b251aa8af"
+    },
+    {
+      "path": "demo/copilot-client.js",
+      "bytes": 8632,
+      "sha256": "c926b48f50e08c1df6c7a89fe37b6d310d9bf4206cf23922952dd62442d53ddf"
+    },
+    {
+      "path": "demo/data.js",
+      "bytes": 802,
+      "sha256": "bcd068c3f8309fe578072340665631e269a2fe10e099dd4e58ee9cb38149f917"
+    },
+    {
+      "path": "demo/demo.css",
+      "bytes": 22078,
+      "sha256": "c1ddd774190f405cf1ed0423e4f67f1610cab68785cd775e56e841dbebec6f38"
+    },
+    {
+      "path": "demo/engine.js",
+      "bytes": 11439,
+      "sha256": "ead83bf18658003f1b2b49a8adb5ebd26ad1e28465ae5813b2cdd1efafe7f421"
+    },
+    {
+      "path": "demo/eval-app.js",
+      "bytes": 25847,
+      "sha256": "973d9b0ac43f4c0fe69e58a2fcf9b97c9efd991f31d3ba63c82d1fc7f357f6cb"
+    },
+    {
+      "path": "demo/eval.css",
+      "bytes": 5819,
+      "sha256": "f09eee0ebb59c25b365fb8b703381d3384f1a37e6ed75ee3aebcaf13da32ba45"
+    },
+    {
+      "path": "demo/eval.html",
+      "bytes": 11714,
+      "sha256": "20d52e03b90195d923df1ca9c5ea4833eb882a784600bc8f6e72ea48ecf7d544"
+    },
+    {
+      "path": "demo/eval/cases.json",
+      "bytes": 89180,
+      "sha256": "faa01aa67ef432b76de182d75a20effa7e15fd8a6498b268b61b4412d38b0624"
+    },
+    {
+      "path": "demo/eval/protocol.js",
+      "bytes": 4805,
+      "sha256": "55ef44ba6267d3b050726837b74a82adfb851d940d39437ae1bc14ae7b83ce35"
+    },
+    {
+      "path": "demo/eval/review-drafts.json",
+      "bytes": 24636,
+      "sha256": "ee19436d53454ac8bf8ee89a6d55f4ded618735cab8e402a95b88914c199b3ba"
+    },
+    {
+      "path": "demo/eval/rules.js",
+      "bytes": 3345,
+      "sha256": "7f3de54681cb7c1efd04b1b97cad97f0bb56cfb756cd79c7d11b4efc80e9f2f4"
+    },
+    {
+      "path": "demo/eval/simulation.js",
+      "bytes": 3205,
+      "sha256": "d3b3f25e25848d5f304a1ff14b80b9b391826f673f805cfdbb78c95db85887a3"
+    },
+    {
+      "path": "demo/eval/validator.js",
+      "bytes": 5487,
+      "sha256": "d55eadc470a384c251c0680596159132c10a0e9542155898cb1d4d1e4e02f231"
+    },
+    {
+      "path": "demo/football-context.js",
+      "bytes": 7626,
+      "sha256": "8f092c6246dcde87071c811d1b0d4c6b2deb346275b97d7c86ff674a1e56c612"
+    },
+    {
+      "path": "demo/historical.html",
+      "bytes": 12781,
+      "sha256": "5dce68b1da5a006fb585a3591bebdff089f9c92a852bd83efab0f8b60c4be243"
+    },
+    {
+      "path": "demo/historical.snapshot.js",
+      "bytes": 209220,
+      "sha256": "eef1c06f44c828c4d16b024be90d2d994b357b1cec79de5f5d7a147a98353699"
+    },
+    {
+      "path": "demo/index.html",
+      "bytes": 11927,
+      "sha256": "203b397289bfc253aba14d429692a0e4477210318a27d6cda74a3260207c5024"
+    },
+    {
+      "path": "demo/scenario.js",
+      "bytes": 9827,
+      "sha256": "951b53d55ce9d4c4885e512e414d28bbda9cbaa117a902037aad14acae3867f2"
+    },
+    {
+      "path": "demo/weekly-app.js",
+      "bytes": 21403,
+      "sha256": "767420a4e34b702ce1a5bda73758bd5604b07cd6522a2232405c9743ffdc18fb"
+    },
+    {
+      "path": "demo/weekly-copilot.js",
+      "bytes": 3898,
+      "sha256": "120b041be1f97e018861776aabf3daeadf13c7b9b6630d845e5f20bf7249bd66"
+    },
+    {
+      "path": "demo/weekly-engine.js",
+      "bytes": 14412,
+      "sha256": "559669f1b90961d4ed8a869662846bb6707daa9f58c32b3428e7ba35eb7e536a"
+    },
+    {
+      "path": "demo/weekly-store.js",
+      "bytes": 6852,
+      "sha256": "8776afea42309d7e86c15438fbf7d75bb3b8af9bb033471233b8080775e68d8b"
+    },
+    {
+      "path": "demo/weekly.css",
+      "bytes": 8611,
+      "sha256": "b17ef9bac104a3e49e671157c129d89aa3e697a4ed883b1ce29f81a3753024c1"
+    },
+    {
+      "path": "demo/weekly.snapshot.json",
+      "bytes": 491876,
+      "sha256": "a6a0156c7979950dac4c4f3103f4c8e9e830ef16f31e7758d43f90221f976767"
+    },
+    {
+      "path": "index.html",
+      "bytes": 14205,
+      "sha256": "9c5788e5db2214597cf576ac14a67235548e21be9488e3c411069160936a1cc3"
+    },
+    {
+      "path": "site.css",
+      "bytes": 20708,
+      "sha256": "e9cc728ec23d41f0052a9b7a53b4908066b0f35cff94cf5806b72dbd39c6b9d3"
+    },
+    {
+      "path": "site.js",
+      "bytes": 4114,
+      "sha256": "c27ee62318a533b742a2d894051575faaf8f5935e5cbbc7945a24d1d85cb5aa2"
+    },
+    {
+      "path": "video/film.js",
+      "bytes": 12247,
+      "sha256": "8210a482a25a1c1402316da51c9e6070af20e6319aed17be83fd9305ed8b033e"
+    },
+    {
+      "path": "video/index.html",
+      "bytes": 1881,
+      "sha256": "cd277b6c702028ab105c0a628de05e0a0eadee1c12017342388b275d40623335"
+    },
+    {
+      "path": "video/refmatch-10s.mp4",
+      "bytes": 1936665,
+      "sha256": "d4c74c06387e3318bc53c54ab3e1de7f493bfa80bc7e5548038018abf5785c7c"
+    },
+    {
+      "path": "video/refmatch-15s.mp4",
+      "bytes": 2336350,
+      "sha256": "ae1e2f2dc601fa74cab1662c3768450b840737478c7b0f16ff938c4a9ce888d7"
+    },
+    {
+      "path": "video/refmatch-captions.vtt",
+      "bytes": 350,
+      "sha256": "cde1310bed9449045b110b333ab16f1e7c2730b4810eb65263a362485d92271b"
+    },
+    {
+      "path": "video/refmatch-poster.png",
+      "bytes": 78315,
+      "sha256": "6a8ef7c512c2df951b7d62649891a3e16c0ea8b72798b7624950e02a3ea87196"
+    },
+    {
+      "path": "video/refmatch-soundtrack.wav",
+      "bytes": 2880044,
+      "sha256": "2f1b55dcf56a0a6918d1b2770765482f13bceb70330f37371aca876ed845291e"
+    },
+    {
+      "path": "video/stills/01-profile.png",
+      "bytes": 704157,
+      "sha256": "c4da670cb9b2e20342b33d460ca32339d4db3de998c5368b99cc28154a44e2d6"
+    },
+    {
+      "path": "video/stills/02-rank.png",
+      "bytes": 636033,
+      "sha256": "5e0319ef94e7b792d5e05216721a134c8af3547f3014e514dcd248584e0a3f37"
+    },
+    {
+      "path": "video/stills/03-explain.png",
+      "bytes": 582530,
+      "sha256": "ebf32253dbd6c3d4beaef3f858a080948b2ef17865d1322375bfcf37691ff1a0"
+    },
+    {
+      "path": "video/stills/04-brand.png",
+      "bytes": 78315,
+      "sha256": "6a8ef7c512c2df951b7d62649891a3e16c0ea8b72798b7624950e02a3ea87196"
+    },
+    {
+      "path": "video/storyboard.png",
+      "bytes": 663577,
+      "sha256": "74ee5e287dbd7c432630c0b8b4d6402a9da1a3859c5f1251a2a8dd248e7a6ce6"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html data-deployment="static" lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#081C26"><title>RefMatch — Matchweek committee</title>
@@ -62,7 +62,7 @@
         <details class="table-details"><summary>Previous meetings and their referees</summary><div id="previous-meetings"></div></details>
         <div class="weekly-comparison"><div class="ranking-panel"><div class="panel-heading"><strong>Ranked candidates</strong><span id="candidate-count"></span></div><div id="weekly-rankings"></div></div><article id="candidate-evidence" class="detail-panel"></article></div>
         <div class="comparison-pickers"><label>Compare candidate<select id="compare-a"></select></label><label>With<select id="compare-b"></select></label></div>
-        <div id="weekly-comparison" class="table-scroll"></div>
+        <div id="weekly-comparison" class="table-scroll" tabindex="0" role="region" aria-label="Referee comparison"></div>
         <details class="table-details"><summary>Excluded candidates and reasons</summary><div id="weekly-exclusions"></div></details>
         <details class="table-details"><summary>Current-season table at the cutoff</summary><div id="weekly-table" class="table-scroll"></div><p>Reconstructed points, goal difference and goals scored. Exact ties share a position; this is a planning table, not a certified final table.</p></details>
       </section>

@@ -43,7 +43,7 @@ h2 { scroll-margin-top: 28px; }
 .risk-meter-fill,.factor-bar>div { height: 100%; background: var(--rm-mint); border-radius: inherit; }
 .risk-card p { color: var(--rm-muted); font-size: 10px; line-height: 1.6; }
 .decision-grid { display: grid; grid-template-columns: minmax(280px, .82fr) minmax(0, 1.18fr); gap: 16px; align-items: start; }
-.ranking-panel,.detail-panel,.audit-card { border: 1px solid var(--rm-line); border-radius: 16px; background: var(--rm-surface); }
+.ranking-panel,.detail-panel,.audit-card { min-width: 0; border: 1px solid var(--rm-line); border-radius: 16px; background: var(--rm-surface); }
 .ranking-panel,.audit-card { padding: 21px; }
 .panel-heading { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 17px; }
 .panel-heading>span:first-child { font-size: 12px; font-weight: 800; }

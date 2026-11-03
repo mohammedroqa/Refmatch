@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html data-deployment="static" lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#081C26"><meta name="description" content="RefMatch visual identity: the right fit, before kickoff. Explore the logo, theme, and fifteen-second explainer.">
@@ -11,7 +11,7 @@
     .theme-toggle{border:1px solid var(--rm-border);padding:9px 15px;border-radius:24px;background:transparent;color:var(--rm-text);font-size:12px;font-weight:700}
     .hero{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:64px;padding:100px 0 96px}.hero h1{font-size:var(--rm-hero);letter-spacing:-.065em;margin:23px 0 27px;line-height:1.03}
     .accent{color:var(--rm-mint)}[data-theme=light] .accent{color:#356B16}.hero p{max-width:430px;color:var(--rm-text-secondary);font-size:17px;line-height:1.8}.hero .actions{display:flex;gap:12px;margin-top:30px}
-    .emblem{min-height:460px;aspect-ratio:1;position:relative;display:grid;place-items:center;overflow:hidden;border-radius:32px;background:var(--rm-mint);color:var(--rm-ink)}
+    .emblem{min-width:0;width:100%;aspect-ratio:1;position:relative;display:grid;place-items:center;overflow:hidden;border-radius:32px;background:var(--rm-mint);color:var(--rm-ink)}
     .emblem:before{content:'';position:absolute;border:1px solid #081c2629;inset:30px;border-radius:42px}.emblem:after{content:'';position:absolute;width:110%;height:1px;top:50%;background:#081c261c;transform:rotate(-35deg)}
     .emblem .orbit{position:absolute;border:1px solid #081c2629;width:65%;aspect-ratio:1;border-radius:50%}.emblem img{width:40%;z-index:1}.emblem .top,.emblem .bottom{position:absolute;left:40px;right:40px;display:flex;justify-content:space-between;font-size:10px;font-weight:750;letter-spacing:.15em}.emblem .top{top:48px}.emblem .bottom{bottom:44px}
     .intro-line{display:flex;justify-content:space-between;gap:24px;padding:24px 0;border-top:1px solid var(--rm-border);border-bottom:1px solid var(--rm-border);font-size:12px;color:var(--rm-text-secondary)}
@@ -55,11 +55,11 @@
     <section id="system">
       <div class="section-heading"><div><div class="rm-eyebrow">03 / The visual system</div><h2>Composed. Clear. Match-ready.</h2></div><p>Midnight provides focus. Mint marks the recommendation. Chalk keeps the information readable. Click a colour to copy its value.</p></div>
       <div class="palette">
-        <button class="swatch" style="background:#081C26;color:#F3F5EF" data-color="#081C26" aria-label="Copy Midnight colour #081C26"><b>Midnight</b><span>#081C26 ↗</span></button>
-        <button class="swatch" style="background:#B6F36A;color:#081C26" data-color="#B6F36A" aria-label="Copy Match Mint colour #B6F36A"><b>Match Mint</b><span>#B6F36A ↗</span></button>
-        <button class="swatch" style="background:#F3F5EF;color:#081C26" data-color="#F3F5EF" aria-label="Copy Chalk colour #F3F5EF"><b>Chalk</b><span>#F3F5EF ↗</span></button>
-        <button class="swatch" style="background:#65D8CA;color:#081C26" data-color="#65D8CA" aria-label="Copy Signal Teal colour #65D8CA"><b>Signal Teal</b><span>#65D8CA ↗</span></button>
-        <button class="swatch" style="background:#F0C786;color:#081C26" data-color="#F0C786" aria-label="Copy Caution colour #F0C786"><b>Caution</b><span>#F0C786 ↗</span></button>
+        <button class="swatch" style="background:#081C26;color:#F3F5EF" data-color="#081C26" aria-label="Copy Midnight #081C26"><b>Midnight</b><span>#081C26 <span aria-hidden="true">↗</span></span></button>
+        <button class="swatch" style="background:#B6F36A;color:#081C26" data-color="#B6F36A" aria-label="Copy Match Mint #B6F36A"><b>Match Mint</b><span>#B6F36A <span aria-hidden="true">↗</span></span></button>
+        <button class="swatch" style="background:#F3F5EF;color:#081C26" data-color="#F3F5EF" aria-label="Copy Chalk #F3F5EF"><b>Chalk</b><span>#F3F5EF <span aria-hidden="true">↗</span></span></button>
+        <button class="swatch" style="background:#65D8CA;color:#081C26" data-color="#65D8CA" aria-label="Copy Signal Teal #65D8CA"><b>Signal Teal</b><span>#65D8CA <span aria-hidden="true">↗</span></span></button>
+        <button class="swatch" style="background:#F0C786;color:#081C26" data-color="#F0C786" aria-label="Copy Caution #F0C786"><b>Caution</b><span>#F0C786 <span aria-hidden="true">↗</span></span></button>
       </div>
       <div class="system-grid">
         <div class="type-sample"><span class="rm-eyebrow">The typography</span><div class="type-display">The right fit.<br>Before kickoff.</div><div class="font-name">Space Grotesk / Display</div><hr class="rm-rule"><p>Clear explanations need clear type. Manrope carries the detail, from match profiles to the reasons behind a recommendation.</p><div class="font-name" style="margin-top:18px">Manrope / Interface & body</div></div>
