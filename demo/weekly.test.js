@@ -76,7 +76,8 @@ test('missing team evidence yields no invented score and undated fixtures cannot
   assert.ok(pendingPlan.analyses.every(a=>a.excluded.some(r=>r.reasons.some(s=>s.includes('Recent match statistics')))));
 });
 
-test('local approval requires committee checks, invalidates after edits, persists and exports reproducible evidence',()=>{
+test('local approval requires committee checks, invalidates after edits, persists and exports reproducible evidence',(t)=>{
+  t.mock.timers.enable({apis:['Date'],now:new Date('2026-10-25T00:00:00Z')});
   const memory=new Map(), storage={getItem:k=>memory.get(k),setItem:(k,v)=>memory.set(k,v)};
   const store=createWeeklyStore(data,{today:input.planningDate,storage});
   assert.equal(store.getSnapshot().gameweek,9);
@@ -90,4 +91,7 @@ test('local approval requires committee checks, invalidates after edits, persist
   store.setGap(4);assert.equal(store.getSnapshot().approval,null);assert.deepEqual(store.getSnapshot().approvedWeeks,{});
   const before=store.getSnapshot();assert.throws(()=>store.setPlanningDate('2027-01-01'),/future/);assert.deepEqual(store.getSnapshot(),before);
   assert.throws(()=>store.setReferee(data.referees[0].id,{commitments:['2026-02-30']}),/valid planning date/);
+  t.mock.timers.setTime(new Date('2026-11-03T00:00:00Z').getTime());
+  for(const {refereeId} of store.getSnapshot().result.assignments)store.setReferee(refereeId,{availability:'available',cleared:true});
+  assert.throws(()=>store.approve('Reviewer'),/already started/);
 });

@@ -42,7 +42,7 @@ export async function mountCopilot(store, { facts = assistantFacts, makeTools = 
     status.textContent = value ? 'Working on your scenario…' : readyLabel;
     form.setAttribute('aria-busy', String(value));
   }
-  const configured = await fetch('/api/assistant-status', { signal: AbortSignal.timeout(8000) }).then(response => {
+  const configured = document.documentElement.dataset.deployment === 'static' ? { available: false, provider: 'static' } : await fetch('/api/assistant-status', { signal: AbortSignal.timeout(8000) }).then(response => {
     if (!response.ok) throw new Error('Connection unavailable');
     return response.json();
   }).catch(() => null);

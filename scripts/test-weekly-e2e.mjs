@@ -11,6 +11,8 @@ const browser=await chromium.launch({headless:true,downloadsPath,executablePath:
 const context=await browser.newContext({viewport:{width:1440,height:1000},acceptDownloads:true});
 if(!live)await context.route('**/api/assistant-status',route=>route.fulfill({json:{available:false,provider:'google'}}));
 const page=await context.newPage(),errors=[];page.on('pageerror',error=>errors.push(error.message));
+// Keep snapshot-specific assertions stable as the real calendar advances.
+await page.clock.setFixedTime(new Date('2026-10-25T00:00:00Z'));
 const check=async(name,fn)=>{await fn();console.log(`PASS ${name}`);};
 const selectedNames=()=>page.locator('.fixture-bottom strong').allTextContents();
 try{

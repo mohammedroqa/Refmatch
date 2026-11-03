@@ -196,6 +196,7 @@ function render() {
 }
 
 async function start() {
+  $('#refresh-data').hidden = document.documentElement.dataset.deployment === 'static';
   const response=await fetch('./weekly.snapshot.json',{cache:'no-cache'}); if(!response.ok)throw new Error('The current-season snapshot could not be loaded. Run npm run data:weekly to refresh it.');
   data=await response.json(); let storage=null;
   try { storage=window.localStorage; } catch {}

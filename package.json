@@ -6,11 +6,13 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build-app.mjs",
+    "build:static": "node scripts/build-static.mjs",
     "prepreview": "npm run build",
     "preview": "node scripts/preview.mjs",
     "start": "npm run preview",
     "test:e2e": "node scripts/test-e2e.mjs",
     "test:weekly": "node scripts/test-weekly-e2e.mjs",
+    "test:responsive": "node scripts/test-responsive.mjs",
     "test": "node --test demo/*.test.js scripts/*.test.mjs",
     "data:refresh": "python3 scripts/refresh-data.py",
     "data:weekly": "python3 scripts/refresh-weekly.py",
