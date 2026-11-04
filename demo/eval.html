@@ -1,14 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html data-deployment="static" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#081c26" />
     <title>RefMatch — Evaluation Lab</title>
     <meta
       name="description"
-      content="Audit AI decisions on synthetic referee plans using experimental rules and independently checked reference answers."
+      content="Explore evidence extraction, referee-plan audits and reproducible evaluation batches. Clearly labelled simulations, failure analysis and independent review workflows."
     />
-    <link rel="icon" href="../brand/logos/app-icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../brand/logos/app-icon.svg" />
     <link rel="stylesheet" href="../brand/theme.css" />
     <link rel="stylesheet" href="eval.css" />
     <script type="module" src="build/eval.js"></script>
@@ -23,258 +24,404 @@
           width="175"
           height="40"
       /></a>
-      <nav aria-label="Main navigation">
+      <nav aria-label="Main">
         <a href="./">Matchweek planner</a
         ><a href="eval.html" aria-current="page">Evaluation Lab</a>
       </nav>
     </header>
     <main id="main" class="shell">
       <section class="hero">
-        <p class="eyebrow">Evaluation Lab / Pilot 1.0</p>
-        <h1>A convincing plan.<br /><span>But is it valid?</span></h1>
+        <p class="eyebrow">Evaluation Lab / 2.0</p>
+        <h1>Find the failure.<br /><span>Follow the evidence.</span></h1>
         <p class="lead">
-          Can frontier AI reliably detect subtle referee-allocation errors, even
-          when the plan and its explanation look convincing?
+          Can an AI read a changing committee record, apply the rules, and know
+          when a plan cannot be cleared?
         </p>
         <div class="chips">
-          <span>All rules are experimental RefMatch assumptions</span
-          ><span>Synthetic cases · expert review pending</span>
+          <span>136 synthetic cases</span
+          ><span>Evidence reading + rule audits</span
+          ><span>Reproducible batches</span>
         </div>
       </section>
       <aside class="notice">
-        <strong>A benchmark in development.</strong> These public cases have
-        authored answers checked by a separate deterministic validator. They are
-        not expert-verified appointments or a private test set. Model
-        predictions never define the correct answer.
+        <strong>Explore with a simulation.</strong> Demonstrations use reference
+        answers and scripted mistakes. They do not measure any provider’s
+        accuracy, confidence or speed. Rules are experimental RefMatch
+        assumptions.
       </aside>
       <p id="error" role="alert" hidden></p>
-      <section aria-labelledby="dataset-heading" class="panel">
+      <p id="storage-status" role="status"></p>
+      <section class="panel" aria-labelledby="dataset-heading">
         <div class="section-head">
           <div>
-            <p class="eyebrow">01 / Establish the reference</p>
-            <h2 id="dataset-heading">One task. Shared evidence.</h2>
+            <p class="eyebrow">01 / Know the reference</p>
+            <h2 id="dataset-heading">A broader test. An honest scope.</h2>
           </div>
-          <div class="actions">
-            <button id="check-corpus" type="button">
-              Check reference answers</button
-            ><button id="export-cases" type="button">Download cases</button>
-          </div>
+          <button id="check-corpus">Check reference answers</button>
         </div>
         <p id="dataset-summary"></p>
         <p id="reference-status" role="status"></p>
+        <div class="grid three">
+          <article class="inset">
+            <h3>Development</h3>
+            <p id="development-count"></p>
+            <p>
+              Explore failures and refine prompts. Related variants stay in the
+              same family.
+            </p>
+          </article>
+          <article class="inset">
+            <h3>Public validation</h3>
+            <p id="validation-count"></p>
+            <p>
+              Separate families, visible answers. This is public validation, not
+              an unseen test.
+            </p>
+          </article>
+          <article class="inset">
+            <h3>Private challenges</h3>
+            <p>
+              Generated and evaluated locally after the prompt is frozen.
+              Challenge data is excluded from the website.
+            </p>
+            <a href="#method">Read the evaluation method ↓</a>
+          </article>
+        </div>
         <details>
-          <summary>Read the experimental rules and decision policy</summary>
+          <summary>Experimental rules and decision policy</summary>
           <p id="policy"></p>
           <ol id="rules"></ol>
         </details>
       </section>
-      <section aria-labelledby="cases-heading" class="panel">
-        <p class="eyebrow">02 / Inspect the cases</p>
-        <h2 id="cases-heading">Small changes. Different verdicts.</h2>
-        <div class="case-controls">
-          <label
-            >Reference verdict<select id="case-filter">
-              <option value="all">All cases</option>
-              <option value="valid">Valid</option>
-              <option value="invalid">Invalid</option>
-              <option value="insufficient_information">
-                Insufficient information
-              </option>
-            </select></label
-          ><label>Case<select id="case-select"></select></label>
-        </div>
-        <div class="case-grid">
-          <article>
-            <h3 id="case-title"></h3>
-            <p id="case-meta" class="muted"></p>
-            <h4>Information supplied to every model</h4>
-            <pre tabindex="0" aria-label="Case input" id="case-input"></pre>
-          </article>
-          <article>
-            <h3>Independent reference</h3>
-            <p id="reference-verdict" class="verdict"></p>
-            <ul id="findings"></ul>
-            <p class="muted">
-              A proven violation takes precedence over unresolved checks. This
-              task audits the proposed plan; it does not ask whether another
-              schedule exists.
-            </p>
-            <details id="ai-review-panel">
-              <summary>Read the AI-assisted review draft</summary>
-              <p class="muted">
-                Draft assessment, not independent expert sign-off. The same
-                assistant helped author these cases and reviews. Human review
-                remains pending.
-              </p>
-              <p id="ai-review-status" role="status">Loading review drafts…</p>
-              <div id="ai-review-content"></div>
-            </details>
-            <details>
-              <summary>Record a human review</summary>
-              <form id="review-form">
-                <label
-                  >Reviewer name<input
-                    id="reviewer"
-                    required
-                    maxlength="100"
-                    autocomplete="name" /></label
-                ><label
-                  >Review outcome<select id="review-outcome">
-                    <option value="agree">Agree with reference answer</option>
-                    <option value="dispute">Needs revision</option>
-                  </select></label
-                ><label
-                  >Review notes<textarea
-                    id="review-notes"
-                    rows="3"
-                    maxlength="3000"
-                  ></textarea></label
-                ><button type="submit">Save review in this browser</button>
-              </form>
-              <p id="review-status" role="status"></p>
-              <p class="muted">
-                A review is a local record, not independent proof of expertise.
-                It does not silently change the dataset or its expected answers.
-              </p>
-            </details>
-          </article>
-        </div>
-      </section>
-      <section aria-labelledby="run-heading" class="panel">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">03 / Test a model</p>
-            <h2 id="run-heading">Same case. Independent decision.</h2>
-          </div>
-        </div>
-        <div class="simulation-panel" aria-labelledby="simulation-heading">
-          <h3 id="simulation-heading">Try a simulation — no credits needed</h3>
-          <p>
-            Step through Jev, OpenAI, Anthropic and Gemini using scripted
-            demonstration answers. The same script runs for each provider: it
-            includes correct answers, missed violations, false alarms,
-            uncertainty and a failed response. It does not predict how any real
-            model performs.
-          </p>
-          <div class="run-controls">
-            <label
-              >Simulation provider<select id="simulation-provider">
-                <option value="jev">Jev — simulation</option>
-                <option value="openai">OpenAI — simulation</option>
-                <option value="anthropic">Anthropic — simulation</option>
-                <option value="google">Gemini — simulation</option>
-              </select></label
-            >
-            <div class="actions">
-              <button id="simulate-case" type="button" class="primary">
-                Simulate this case</button
-              ><button id="simulate-provider" type="button">
-                Simulate 30 cases</button
-              ><button id="simulate-all" type="button">
-                Simulate all four providers</button
-              ><button id="stop-simulation" type="button" hidden>
-                Stop simulation
-              </button>
-            </div>
-          </div>
-          <p id="simulation-status" role="status" aria-live="polite">
-            No model calls. No credentials required. Simulation works on static
-            sites too.
-          </p>
-          <p class="muted">
-            Simulation uses reference answers and scripted changes to
-            demonstrate scoring. Probabilities are invented demonstration
-            values, provider cost is $0, and model latency is unmeasured. All
-            exported attempts retain their simulation label.
-          </p>
-        </div>
-        <h3>Live model runs</h3>
-        <p id="backend-status" role="status">Checking model connections…</p>
-        <div class="run-controls">
-          <label>Model provider<select id="provider"></select></label>
-          <div class="actions">
-            <button id="run-case" type="button" disabled class="primary">
-              Run this case</button
-            ><button id="run-all" type="button" disabled>
-              Run all 30 cases</button
-            ><button id="stop" type="button" hidden>Stop run</button>
-          </div>
-        </div>
-        <p class="muted">
-          Live runs use configured provider accounts and may incur charges.
-          Calls run sequentially with no automatic retries. Keys stay on the
-          server. Without credentials, use reference checks or import
-          predictions; those do not count as live model runs.
+      <section class="panel" aria-labelledby="run-heading">
+        <p class="eyebrow">02 / Freeze a batch</p>
+        <h2 id="run-heading">Same cases. Traceable settings.</h2>
+        <p>
+          Every batch includes its entire split. Each case counts once per
+          trial. Repeated trials and imports never silently increase a case’s
+          weight.
         </p>
+        <form id="batch-form">
+          <div class="grid three">
+            <label
+              >Task<select id="stage">
+                <option value="audit">
+                  Rule audit · structured facts supplied
+                </option>
+                <option value="evidence">
+                  Evidence reading · interpret committee notes
+                </option>
+              </select></label
+            ><label
+              >Case split<select id="split">
+                <option value="development">Development</option>
+                <option value="validation">Public validation</option>
+              </select></label
+            ><label
+              >Run type<select id="mode">
+                <option value="simulation">
+                  Simulation · no provider calls
+                </option>
+                <option value="live">
+                  Live provider · local server required
+                </option>
+              </select></label
+            ><label id="profile-label"
+              >Demonstration behaviour<select id="profile">
+                <option value="reference">Reference-assisted answers</option>
+                <option value="overconfident">Overconfident clearance</option>
+                <option value="updates">Missed committee updates</option>
+                <option value="errors">Intermittent response failures</option>
+              </select></label
+            ><label id="provider-label" hidden
+              >Configured provider<select id="provider"></select></label
+            ><label
+              >Trials per case<select id="trials">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select></label
+            ><label
+              >Temperature<input
+                id="temperature"
+                type="number"
+                min="0"
+                max="2"
+                step="0.1"
+                value="0" /></label
+            ><label
+              >Maximum output tokens<input
+                id="max-tokens"
+                type="number"
+                min="128"
+                max="8192"
+                value="2048"
+            /></label>
+          </div>
+          <p id="backend-status"></p>
+          <div class="actions">
+            <button id="run-batch" class="primary" type="submit">
+              Run simulation batch</button
+            ><button id="stop" type="button" hidden>Stop batch</button>
+          </div>
+        </form>
         <p id="run-status" role="status" aria-live="polite">
-          No model runs yet.
+          No batches run in this browser.
         </p>
         <details>
-          <summary>Import predictions from an external runner</summary>
+          <summary>Import a batch from an external runner</summary>
           <p>
-            Upload a RefMatch report or a JSON array of objects containing
-            caseId, provider, model and prediction. Prediction must contain
-            verdict, probabilities and categories. Imported results are labelled
-            user-supplied and are not verified live calls. Any supplied
-            reference answers are ignored.
+            Import the version 2 report format. Dataset, rules, complete case
+            list, packet hashes and unique case/trial slots are validated.
+            Imported provider claims remain user-supplied.
           </p>
           <label
-            >Prediction file<input
+            >Batch report<input
               id="import-file"
               type="file"
               accept=".json,application/json"
           /></label>
         </details>
       </section>
-      <section aria-labelledby="results-heading" class="panel">
+      <section class="panel" aria-labelledby="results-heading">
         <div class="section-head">
           <div>
-            <p class="eyebrow">04 / Measure the failures</p>
-            <h2 id="results-heading">Evidence over impressions.</h2>
+            <p class="eyebrow">03 / Measure the risk</p>
+            <h2 id="results-heading">Which plans were cleared incorrectly?</h2>
           </div>
           <div class="actions">
-            <button id="export-report" type="button">Download report</button
-            ><button id="export-csv" type="button">Download scores CSV</button
-            ><button id="clear-results" type="button">Clear results</button>
+            <button id="export-report" disabled>Download batch</button
+            ><button id="export-csv" disabled>Download scores CSV</button>
           </div>
         </div>
-        <p class="muted">
-          Providers, model versions and imported responses are reported
-          separately. All attempts remain visible; repeats are not
-          cherry-picked. Rates use completed responses; end-to-end accuracy also
-          counts failed attempts. Missing costs remain unknown.
-        </p>
-        <div id="results"></div>
-        <div class="table-scroll" tabindex="0" role="region" aria-label="Evaluation attempts">
+        <div class="grid two">
+          <label
+            >Batch<select id="batch-select">
+              <option value="">No batches yet</option>
+            </select></label
+          ><label
+            >Trial<select id="trial-select">
+              <option>1</option>
+            </select></label
+          >
+        </div>
+        <p id="batch-meta"></p>
+        <div id="results" aria-live="polite"></div>
+        <details id="metric-details">
+          <summary>
+            Per-rule metrics, confusion matrix and trial results
+          </summary>
+          <pre
+            id="metrics-json"
+            tabindex="0"
+            aria-label="Detailed metrics"
+          ></pre>
+        </details>
+        <details>
+          <summary>Compare batches without pooling their attempts</summary>
+          <p>
+            Only batches with the selected dataset, task, split and trial count
+            are shown. Settings and coverage remain visible. Simulation and
+            measured results are labelled separately.
+          </p>
+          <div
+            id="batch-comparison"
+            class="table-scroll"
+            tabindex="0"
+            role="region"
+            aria-label="Batch comparison"
+          ></div>
+        </details>
+        <div class="section-head">
+          <h3>Failure explorer</h3>
+          <label
+            >Show<select id="failure-filter">
+              <option value="failures">Failures and mismatches</option>
+              <option value="all">All planned cases</option>
+              <option value="unsafe">Unsafe clearances</option>
+            </select></label
+          >
+        </div>
+        <div
+          class="table-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="Case results"
+        >
           <table>
             <caption>
-              All evaluation attempts
+              One case per selected trial
             </caption>
             <thead>
               <tr>
-                <th>Case</th>
-                <th>Model / source</th>
-                <th>Expected</th>
-                <th>Prediction</th>
-                <th>Outcome</th>
-                <th>Latency</th>
+                <th>Case / family</th>
+                <th>Reference</th>
+                <th>Result</th>
                 <th>Inspect</th>
               </tr>
             </thead>
             <tbody id="attempts"></tbody>
           </table>
         </div>
-        <pre
-          id="attempt-detail"
-          hidden
-          tabindex="0"
-          aria-label="Selected attempt detail"
-        ></pre>
+      </section>
+      <section class="panel" aria-labelledby="case-heading">
+        <p class="eyebrow">04 / Explain the failure</p>
+        <h2 id="case-heading">Trace the decision to its source.</h2>
+        <label>Inspect case<select id="case-select"></select></label>
+        <p id="case-meta"></p>
+        <div class="grid two">
+          <article class="inset">
+            <h3>Decisive evidence</h3>
+            <div id="evidence"></div>
+            <details>
+              <summary>Model input · answer metadata excluded</summary>
+              <pre id="case-input" tabindex="0" aria-label="Model input"></pre>
+            </details>
+          </article>
+          <article class="inset">
+            <h3>Response and reference</h3>
+            <p id="reference-verdict"></p>
+            <ul id="findings"></ul>
+            <p id="stage-diagnosis"></p>
+            <pre
+              id="model-response"
+              tabindex="0"
+              aria-label="Model response"
+            ></pre>
+            <div id="paired-cases" class="actions"></div>
+            <details>
+              <summary>What changed from the paired case?</summary>
+              <pre
+                id="pair-diff"
+                tabindex="0"
+                aria-label="Paired case difference"
+              ></pre>
+            </details>
+          </article>
+        </div>
+      </section>
+      <section class="panel" aria-labelledby="review-heading">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">05 / Review independently</p>
+            <h2 id="review-heading">A review trail, not a stamp.</h2>
+          </div>
+          <div class="actions">
+            <button id="export-blind">Download blind review pack</button
+            ><button id="export-reviews">Download review trail</button>
+          </div>
+        </div>
+        <p>
+          Use the blind pack before opening reference answers. Domain and
+          technical reviews need different people. A disagreement requires a
+          third reviewer. Local declarations do not verify anyone’s identity or
+          expertise.
+        </p>
+        <p id="review-coverage"></p>
+        <p id="review-status" role="status"></p>
+        <form id="review-form">
+          <div class="grid three">
+            <label
+              >Reviewer name<input
+                id="reviewer"
+                required
+                minlength="2"
+                maxlength="100"
+                autocomplete="name" /></label
+            ><label
+              >Role<select id="review-role">
+                <option value="domain">Domain specialist</option>
+                <option value="technical">Technical reviewer</option>
+                <option value="adjudicator">Adjudicator</option>
+              </select></label
+            ><label
+              >Verdict<select id="review-verdict">
+                <option value="valid">Valid</option>
+                <option value="invalid">Invalid</option>
+                <option value="insufficient_information">
+                  Insufficient information
+                </option>
+              </select></label
+            >
+          </div>
+          <label
+            >Categories · select all violations and unresolved checks<select
+              id="review-categories"
+              multiple
+              size="4"
+            ></select></label
+          ><label
+            >Evidence, disagreement or adjudication rationale<textarea
+              id="review-notes"
+              required
+              minlength="10"
+              maxlength="4000"
+              rows="3"
+            ></textarea></label
+          ><label class="check"
+            ><input id="review-independent" type="checkbox" required />I
+            independently reviewed this case and was not its author.</label
+          ><button type="submit">Record review for selected case</button>
+        </form>
+        <details>
+          <summary>Review history and import</summary>
+          <pre
+            id="review-history"
+            tabindex="0"
+            aria-label="Review history"
+          ></pre>
+          <label
+            >Review trail file<input
+              id="import-reviews"
+              type="file"
+              accept=".json,application/json"
+          /></label>
+        </details>
+      </section>
+      <section id="method" class="panel">
+        <p class="eyebrow">Method and limits</p>
+        <h2>Make the result reproducible.</h2>
+        <p>
+          Unsafe clearance includes both invalid plans and plans with unresolved
+          checks labelled valid. Error and unrun counts remain visible.
+          End-to-end accuracy uses every planned case as its denominator.
+          Repeated trials are reported separately.
+        </p>
+        <p>
+          Intervals resample entire case families 500 times. They are
+          descriptive 95% bootstrap intervals, not proof of real-world
+          performance. Related synthetic families may still share patterns.
+          Small-sample probability scores do not establish calibration.
+        </p>
+        <p>
+          Evidence reading measures extracted statuses, supporting citations,
+          and the deterministic verdict obtained from those facts. The
+          rule-audit task supplies reference facts to isolate rule application.
+          Expert review remains a separate process.
+        </p>
+        <p>
+          For controlled challenges: generate a private corpus after freezing
+          your prompt, keep it out of version control, run the local CLI, then
+          archive settings and the report. Never describe public validation as
+          unseen.
+        </p>
+        <details>
+          <summary>Local runner commands</summary>
+          <pre tabindex="0" aria-label="Runner commands">
+npm run eval:challenge
+node scripts/eval-runner.mjs --help
+node scripts/eval-runner.mjs --corpus .eval-private/challenge.json --split private --stage evidence --provider openai --output .eval-private/results.json</pre>
+        </details>
+        <p>
+          <a href="eval-method.html"
+            >Read the full evaluation and publication guide ↗</a
+          >
+        </p>
       </section>
     </main>
     <footer class="shell">
-      RefMatch Evaluation Lab · Synthetic public development benchmark · No
-      official appointment rules
+      RefMatch Evaluation Lab · Synthetic experimental rules · No official
+      appointments
     </footer>
   </body>
 </html>

@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "builtAt": "2026-11-03T03:43:13.281Z",
+  "builtAt": "2026-11-04T22:31:11.967Z",
   "files": [
     {
       "path": ".nojekyll",
@@ -174,8 +174,8 @@
     },
     {
       "path": "demo/build/eval.js",
-      "bytes": 482830,
-      "sha256": "f67b9d4ba13cea3642605b2a0dee90d7cf3cb16d5eb18a7fdabded353a225f8b"
+      "bytes": 488871,
+      "sha256": "eea975d14edf20d1c5102662e297e70886a6c93e8a2762cd20a382005f4a7896"
     },
     {
       "path": "demo/build/weekly-copilot.js",
@@ -209,33 +209,48 @@
     },
     {
       "path": "demo/eval-app.js",
-      "bytes": 25847,
-      "sha256": "973d9b0ac43f4c0fe69e58a2fcf9b97c9efd991f31d3ba63c82d1fc7f357f6cb"
+      "bytes": 23501,
+      "sha256": "5f458f40526f1e949e1e2b3fc4a75802b68be4e4b8b78c5aa6a9d02e2043e9ea"
+    },
+    {
+      "path": "demo/eval-method.html",
+      "bytes": 9509,
+      "sha256": "3b43525a3e8e9282cc29183b8a3a3d4353e2e15951ef37f72236e67050c92e66"
     },
     {
       "path": "demo/eval.css",
-      "bytes": 5819,
-      "sha256": "f09eee0ebb59c25b365fb8b703381d3384f1a37e6ed75ee3aebcaf13da32ba45"
+      "bytes": 6083,
+      "sha256": "6fda013090c48b0e06d1179a1cf877852cc46cf51ca5301f37fbce34cadf1158"
     },
     {
       "path": "demo/eval.html",
-      "bytes": 11714,
-      "sha256": "20d52e03b90195d923df1ca9c5ea4833eb882a784600bc8f6e72ea48ecf7d544"
+      "bytes": 16192,
+      "sha256": "3346012f23bbbd89bbfdfb7a58107d34c516a81352090830f3c3a318434c28be"
     },
     {
       "path": "demo/eval/cases.json",
+      "bytes": 1690629,
+      "sha256": "b51dfb782c1bc7841634d521d7f39d1e8d5898040d864f44d083a54bb90ed145"
+    },
+    {
+      "path": "demo/eval/contract.js",
+      "bytes": 3845,
+      "sha256": "f497db30db3c52bd4e50addcd8000506f5f495537b79eefaf30e996c8ebb056e"
+    },
+    {
+      "path": "demo/eval/metrics.js",
+      "bytes": 6777,
+      "sha256": "584fcfa9d734f470a5ce7c5fa83d0a3dc5d89a7db93d014afb7b545de3184ebb"
+    },
+    {
+      "path": "demo/eval/pilot-cases.json",
       "bytes": 89180,
       "sha256": "faa01aa67ef432b76de182d75a20effa7e15fd8a6498b268b61b4412d38b0624"
     },
     {
       "path": "demo/eval/protocol.js",
-      "bytes": 4805,
-      "sha256": "55ef44ba6267d3b050726837b74a82adfb851d940d39437ae1bc14ae7b83ce35"
-    },
-    {
-      "path": "demo/eval/review-drafts.json",
-      "bytes": 24636,
-      "sha256": "ee19436d53454ac8bf8ee89a6d55f4ded618735cab8e402a95b88914c199b3ba"
+      "bytes": 9845,
+      "sha256": "adb9a14d2237e6d6989e68f2eedfd6310d99c2d47d8290d5624f9f5b46146e17"
     },
     {
       "path": "demo/eval/rules.js",
@@ -244,8 +259,8 @@
     },
     {
       "path": "demo/eval/simulation.js",
-      "bytes": 3205,
-      "sha256": "d3b3f25e25848d5f304a1ff14b80b9b391826f673f805cfdbb78c95db85887a3"
+      "bytes": 1824,
+      "sha256": "7911d230c0a6c9f77f014699382c4d24400a5a2113a7eb90ef3e76628a24ba0c"
     },
     {
       "path": "demo/eval/validator.js",
