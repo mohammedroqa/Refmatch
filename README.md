@@ -50,6 +50,14 @@ npm run data:weekly -- --offline
 
 The first command refreshes public sources; the second reconstructs the same compact snapshot from verified local files. The app also has a local refresh button. Source checksums, capture timestamps and coverage dates are visible/exported. Raw files stay in ignored `.cache/weekly/`. The source feed can lag recent fixtures; do not interpret its last result as the current date.
 
+## Evaluation Lab 2.0
+
+Open `/demo/eval.html` for reproducible batches, 136 synthetic cases, evidence-reading
+and rule-audit tasks, unsafe-clearance scoring, failure exploration and independent
+review records. Simulations are clearly labelled and are not real provider measurements.
+The full [evaluation guide](docs/evaluation-v2.md) covers local private challenges,
+provider runs, import formats and limitations. The lab builds entirely from tracked source.
+
 ## Verification
 
 ```sh

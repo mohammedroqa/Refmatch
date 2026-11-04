@@ -1,0 +1,171 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RefMatch — Evaluation method</title><link rel="stylesheet" href="../brand/theme.css"><link rel="stylesheet" href="eval.css"></head><body><main class="shell"><p><a href="eval.html">← Evaluation Lab</a></p><h1>Evaluation method</h1><pre style="max-height:none" tabindex="0" aria-label="Evaluation guide"># RefMatch Evaluation Lab 2.0
+
+The lab separates structured rule auditing from evidence interpretation. It provides
+reproducible case batches, failure inspection, independent-review records and a
+provider runner. Its default demonstration is explicitly simulated. Simulations
+use authored references and scripted errors; they cannot establish provider
+accuracy, calibration, latency or relative quality. No expert sign-off or real
+model measurements are bundled with this release.
+
+## Build and run
+
+Node 22+ and Python 3 support the main project. The runner's optional
+`--use-env-proxy` flag requires a Node release that supports it (Node 24+).
+
+```
+npm ci
+npm run eval:generate
+npm run build
+npm run preview
+```
+
+Open `/demo/eval.html`. All source and response schemas are tracked. The Lab no
+longer depends on a previous deployed bundle or a missing contract file. Both
+`npm run build` and `npm run build:static` rebuild it. The original 30 authored
+pilot cases are retained as generation inputs; public cases are reproducible.
+
+## Dataset and tasks
+
+There are 136 public cases in 24 families, with 3, 6, 10 and 16 fixtures. Related
+pairs and size/order variants stay within a family. Development and validation
+families do not overlap. Both splits are public and share generator primitives;
+validation is not an unseen benchmark. Unique packets and family separation are
+tested. Coverage includes single and compound violations, uncertainty, strict
+cutoff boundaries, exact spacing boundaries, irrelevant future records, differing
+record order, longer archived histories and misleading proposed explanations.
+
+Both evidence-task splits include valid, invalid and unresolved references.
+Sixteen narrative cases exercise ordinary committee updates, retractions,
+contradictions, tentative attendance, future notes and untrusted embedded
+instructions. Authored extraction targets include source IDs. The audit task
+supplies reference committee facts, isolating rule reasoning. The evidence task
+hides those facts, supplies source notes and requests extraction plus a verdict.
+Extraction and citation matches are scored separately. A deterministic audit of
+extracted facts distinguishes downstream consequences from the model's reasoning.
+Explanatory prose is displayed for human review rather than automatically graded.
+This is a controlled synthetic task; natural-language coverage still needs growth.
+
+Reference answers are authored from the pilot and narrative case specifications,
+then checked against a separate deterministic validator. Agreement establishes
+consistency, not an independent correctness guarantee. Boundary and precedence
+regression tests supplement the checks.
+
+## Frozen batches and metrics
+
+Every batch freezes dataset/rule hashes, prompt version, stage, split, complete
+case list, provider/model, temperature, output-token limit and trial count.
+Attempts record packet hashes, response schema, resolved model, usage, raw response
+and elapsed request time when available. No automatic retry occurs. Stop preserves
+completed and failed attempts; untouched slots remain unrun. CLI resumption skips
+occupied slots, including errors; use a new batch to repeat a failed trial.
+
+Imports validate the full split, dataset and rules, packet hashes and unique
+case/trial slots. Browser imports reject duplicate batch IDs. Imported provider
+claims are user-supplied and never certified as live by the website. Batches are
+compared without pooling attempts. Each trial scores each planned case once.
+Model setting and source differences remain visible; a comparison is descriptive,
+not an automatic assertion of experimental equivalence.
+
+Unsafe clearance combines invalid and insufficient-information references called
+valid. Report both components with counts. Response errors and unrun cases are
+visible in coverage and in the denominator of end-to-end accuracy. Conditional
+rates use completed cases; they must not be read without coverage. Other measures:
+
+- Verdict confusion matrix, including error/unrun columns.
+- Per-rule precision/recall and false alarms.
+- Complete paired-case verdict correctness and invariance-group correctness.
+- Extraction-status and supporting-citation exact match.
+- Deterministic downstream accuracy from extracted facts.
+- Multiclass Brier score; small samples do not establish calibration.
+- Descriptive 95% intervals from 500 whole-family bootstrap resamples; no interval
+  is produced when there are fewer than two families. Related synthetic families
+  can still be correlated, so intervals do not imply real-world generalization.
+
+Trials remain separate. Simulated runs have no measured latency or cost estimates.
+Live cost is not invented from token counts; use the provider's billing records.
+
+## Independent review
+
+Download the blind review pack before viewing answers. It contains input packets
+and case/ruleset hashes with opaque review IDs, excluding authored verdicts, gold facts and revealing titles.
+Obtain separate domain-specialist and technical reviews. Record reviewer identity,
+role, an independence declaration, verdict, categories and evidence rationale.
+Disagreement requires a different third adjudicator, after both reviews. An
+adjudicator proposing a changed answer marks the case for a new dataset version;
+it never silently rewrites reference labels or historical scores.
+
+The trail is append-only in the interface and can be exported/imported with
+case-hash validation. Imported timestamps are self-reported; review identity,
+independence, expertise and timestamps are not authenticated. These records support
+a review process rather than certifying expert approval. The release does not
+fabricate completed independent reviews.
+
+## Local private challenges
+
+```
+npm run eval:challenge
+```
+
+This writes 16 fresh compound challenge instances to `.eval-private/challenge.json`
+using random identifier seeds and reserved compound families. This directory is
+ignored by Git, denied by the local static server and excluded from the static
+build. Never move private corpora into `demo/`. The generator is public; this is
+not a guarantee of benchmark secrecy or unseen conceptual difficulty.
+
+Generate after freezing prompts, restrict access, recruit independent reviewers,
+archive the corpus/settings, and evaluate before inspecting answers. A second
+`eval:challenge` refuses to overwrite an existing corpus; archive and rename it
+before generating another. No held-out performance is claimed until that process
+has actually been completed.
+
+## Real provider runner
+
+Set a provider key and an exact model ID in the local environment or ignored
+`.env` for the preview server:
+
+- `OPENAI_API_KEY` and `REFMATCH_EVAL_OPENAI_MODEL`
+- `ANTHROPIC_API_KEY` and `REFMATCH_EVAL_ANTHROPIC_MODEL`
+- `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) and `REFMATCH_EVAL_GOOGLE_MODEL`
+
+The CLI uses inherited environment variables; it does not automatically load
+`.env`. Exact model IDs are deliberately not guessed. Model support for temperature
+or JSON mode can vary; unsupported settings become recorded errors and are not
+silently changed. Providers used are OpenAI Chat Completions, Anthropic Messages,
+and Google's generateContent API. Credentials stay server-side. Allow the relevant
+API host in the execution environment; use Node's environment-proxy support where
+required. The local API accepts only same-origin requests and serializes runs.
+
+```
+node scripts/eval-runner.mjs --corpus .eval-private/challenge.json --split private --stage evidence --provider openai --trials 3 --output .eval-private/results.json
+node scripts/eval-score.mjs --corpus .eval-private/challenge.json --report .eval-private/results.json --output .eval-private/scores.json
+```
+
+To resume, supply `--resume .eval-private/results.json` with the same corpus and
+provider. The resume report's frozen settings win. Public reports can be imported
+into the website; private reports are scored locally against their private corpus.
+Never publish an unseen corpus just to import its report into the public UI.
+
+Provider transport and error handling are tested with mocked responses. The current
+environment has no provider credentials/API grants, so these tests are not real
+model runs. GitHub Pages is static: it supports simulations, imports, review and
+failure exploration; live calls use the separately configured local server/CLI.
+
+## Verification and publication
+
+```
+npm test
+npm run test:eval:browser
+npm run test:weekly
+npm run test:e2e
+npm run build:static
+npm run test:responsive
+```
+
+Set `CHROMIUM_PATH` to a system browser and `REFMATCH_TEST_URL` to the running
+preview when necessary. The evaluation suite tests full batches, extraction,
+unsafe-clearance scores, duplicate/tampered imports, review adjudication, stop,
+persistence, downloads and mobile/keyboard behaviour. Source and static builds
+are tested separately. Publication copies the complete `dist/` artifact to
+`gh-pages`; source belongs on the main repository branch. A SHA-256 manifest
+records every published file.
+</pre></main></body></html>

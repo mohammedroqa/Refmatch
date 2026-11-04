@@ -28,27 +28,6 @@ async function walk(directory) {
 }
 for (const path of ['index.html', 'site.css', 'site.js']) await copy(path);
 for (const directory of ['demo', 'brand', 'assets', 'video']) await walk(resolve(root, directory));
-// The separately published Evaluation Lab includes a prebuilt bundle whose
-// build-time contract is not in this source checkout. Preserve that release.
-const previousIndex = process.argv.indexOf('--previous-release');
-if (previousIndex !== -1) {
-  if (!process.argv[previousIndex + 1]) throw new Error('Provide the previous release directory.');
-  const previous = resolve(process.argv[previousIndex + 1]);
-  for (const path of ['demo/eval.html', 'demo/eval.css', 'demo/eval-app.js', 'demo/eval', 'demo/build/eval.js']) {
-    await cp(resolve(previous, path), resolve(output, path), { recursive: true });
-  }
-  const lab = resolve(output, 'demo/eval.html');
-  await writeFile(lab, (await readFile(lab, 'utf8'))
-    .replace('<pre id="case-input"', '<pre tabindex="0" aria-label="Case input" id="case-input"')
-    .replace('<div class="table-scroll">', '<div class="table-scroll" tabindex="0" role="region" aria-label="Evaluation attempts">'));
-  for (const [path, anchor, link] of [
-    ['index.html', '<div class="hero-actions">', '<a class="rm-button rm-button--secondary" href="demo/eval.html">Explore the Evaluation Lab ↗</a>'],
-    ['demo/index.html', '<nav>', '<a href="eval.html">Evaluation Lab</a>'],
-  ]) {
-    const destination = resolve(output, path);
-    await writeFile(destination, (await readFile(destination, 'utf8')).replace(anchor, anchor + link));
-  }
-}
 await writeFile(resolve(output, '.nojekyll'), '');
 const manifest = [];
 async function inventory(directory) {

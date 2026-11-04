@@ -18,7 +18,11 @@
     "data:weekly": "python3 scripts/refresh-weekly.py",
     "render": "node scripts/render.mjs",
     "render:stills": "node scripts/render.mjs --stills",
-    "assets": ".venv/bin/python scripts/build-brand.py"
+    "assets": ".venv/bin/python scripts/build-brand.py",
+    "eval:generate": "node scripts/generate-evals.mjs",
+    "eval:challenge": "node scripts/generate-evals.mjs --private",
+    "test:eval": "node --test demo/eval.test.js scripts/eval-api.test.mjs",
+    "test:eval:browser": "node scripts/test-evaluation-release.mjs"
   },
   "devDependencies": {
     "esbuild": "0.28.2",

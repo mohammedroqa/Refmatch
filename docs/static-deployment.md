@@ -2,35 +2,21 @@
 
 ## GitHub Pages publication
 
-The `gh-pages` branch contains the published site. Build a static release that
-disables unavailable assistant and refresh controls, preserves the existing
-Evaluation Lab, and records SHA-256 checksums:
+The `gh-pages` branch contains the published site. Run `npm ci` followed by
+`npm run build:static` to build all pages, including the Evaluation Lab, from
+tracked source. No previous-release artifact is required. Copy the complete
+`dist/` contents into a fresh worktree of `gh-pages`, review the diff, commit and
+push. Preserve `.nojekyll` and verify the release manifest.
 
-```sh
-git fetch origin gh-pages
-git worktree add --detach /tmp/refmatch-previous FETCH_HEAD
-npm run build:static -- --previous-release /tmp/refmatch-previous
-```
+GitHub Pages should publish from `gh-pages` at the repository root. The site is
+`https://mohammedroqa.github.io/Refmatch/`; the Evaluation Lab is at
+`https://mohammedroqa.github.io/Refmatch/demo/eval.html`. Confirm the Pages deployment
+and live URL after pushing when network access permits.
 
-Use a fresh worktree path if that directory already exists. The Evaluation Lab
-was published separately; its source build contract is absent from this checkout,
-so `--previous-release` preserves its deployed bundle and data. Omitting that
-option builds the planner, archive, landing page, brand and film only.
-
-Verify `dist/` with a local HTTP server before copying its contents into a worktree
-of `gh-pages`, committing, and pushing that branch. Preserve `.nojekyll`. GitHub
-Pages should publish from `gh-pages` at the repository root. The expected site is
-`https://mohammedroqa.github.io/Refmatch/`; confirm the Pages deployment completes
-and check the live site after pushing. The static profile supports local planning
-and Evaluation Lab simulations/imports; live AI calls and source refresh require
-the separate backend.
-
-Browser suites: `npm run test:weekly`, `npm run test:e2e`,
-`npm run test:responsive`, and `node scripts/test-evaluation-release.mjs`.
-Set `CHROMIUM_PATH` when using system Chromium, and `REFMATCH_TEST_URL` to select
-the release server. Weekly/historical suites include backend-specific checks and
-should use `npm run preview`; responsive and Evaluation Lab suites can test the
-static release.
+The static profile supports local planning and Evaluation Lab simulations, imports,
+review trails and failure inspection. Live AI calls require the local backend;
+source refresh is disabled on the static site. See [Evaluation Lab 2.0](evaluation-v2.md)
+for generation, private challenge handling, metrics, provider configuration and tests.
 
 The demo can be hosted as static files by Nginx. The committee planner and saved
 browser-local drafts work without a backend. The assistant and source-refresh

@@ -1,0 +1,407 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: #081c26;
+  color: #f3f5ef;
+  font: 14px/1.7 var(--rm-font-body, system-ui);
+}
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+.shell {
+  width: min(1200px, calc(100% - 48px));
+  margin: auto;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid #31515d;
+}
+nav,
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+a {
+  color: #b6f36a;
+}
+nav a {
+  font-size: 12px;
+}
+.hero {
+  padding: 70px 0 40px;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #65d8ca;
+  font-weight: 700;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--rm-font-display, system-ui);
+  line-height: 1.13;
+  letter-spacing: -0.035em;
+}
+h1 {
+  font-size: clamp(40px, 6vw, 76px);
+  margin: 20px 0;
+}
+h1 span {
+  color: #b6f36a;
+}
+h2 {
+  font-size: clamp(26px, 3vw, 36px);
+  margin: 12px 0 20px;
+}
+h3 {
+  font-size: 20px;
+}
+p {
+  color: #b7ccd3;
+}
+.lead {
+  font-size: 17px;
+  max-width: 700px;
+}
+.chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.chips span,
+.badge {
+  padding: 6px 12px;
+  border: 1px solid #52717b;
+  border-radius: 99px;
+  color: #b6f36a;
+  font-size: 11px;
+}
+.notice {
+  padding: 22px;
+  border-left: 3px solid #b6f36a;
+  background: #13313a;
+  border-radius: 0 12px 12px 0;
+}
+.panel {
+  margin-top: 28px;
+  border: 1px solid #31515d;
+  border-radius: 18px;
+  padding: 30px;
+  min-width: 0;
+  background: #102832;
+}
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.grid {
+  display: grid;
+  gap: 18px;
+  margin: 20px 0;
+}
+.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.inset {
+  padding: 20px;
+  border: 1px solid #31515d;
+  border-radius: 12px;
+  min-width: 0;
+  background: #0b222c;
+}
+.inset h3 {
+  margin-top: 0;
+}
+.inset p {
+  font-size: 12px;
+}
+label {
+  display: grid;
+  gap: 7px;
+  color: #c3d5da;
+  font-size: 12px;
+  min-width: 0;
+}
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  color: inherit;
+}
+input,
+select,
+textarea {
+  border: 1px solid #66838c;
+  background: #081c26;
+  border-radius: 8px;
+  padding: 12px;
+  min-width: 0;
+  width: 100%;
+  color: #f3f5ef;
+  min-height: 44px;
+}
+select {
+  color-scheme: dark;
+}
+button {
+  border: 1px solid #81a763;
+  color: #b6f36a;
+  background: transparent;
+  border-radius: 8px;
+  padding: 11px 15px;
+  min-height: 44px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+button.primary {
+  background: #b6f36a;
+  color: #081c26;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+button:hover:enabled {
+  border-color: #f3f5ef;
+}
+.check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+}
+.check input {
+  width: 18px;
+  min-height: 18px;
+}
+textarea {
+  resize: vertical;
+}
+form > label {
+  margin: 16px 0;
+}
+:focus-visible {
+  outline: 3px solid #b6f36a;
+  outline-offset: 3px;
+}
+details {
+  margin: 20px 0;
+}
+summary {
+  cursor: pointer;
+  color: #65d8ca;
+  font-weight: 600;
+}
+pre {
+  font:
+    12px/1.7 ui-monospace,
+    monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 450px;
+  overflow: auto;
+  background: #081c26;
+  padding: 16px;
+  border: 1px solid #31515d;
+  border-radius: 10px;
+}
+.table-scroll {
+  max-width: 100%;
+  overflow: auto;
+  margin-top: 20px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 12px;
+}
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 12px;
+  border-bottom: 1px solid #31515d;
+  min-width: 110px;
+}
+th {
+  color: #65d8ca;
+}
+caption {
+  text-align: left;
+  color: #b7ccd3;
+  padding-bottom: 12px;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0;
+}
+.metric {
+  padding: 18px;
+  border: 1px solid #52717b;
+  border-radius: 12px;
+}
+.metric strong {
+  display: block;
+  color: #b6f36a;
+  font: 500 29px var(--rm-font-display);
+}
+.metric span,
+.metric small {
+  display: block;
+  color: #c3d5da;
+  font-size: 11px;
+}
+.metric small {
+  margin-top: 8px;
+}
+.warning {
+  color: #f0c786;
+}
+.source {
+  border-left: 2px solid #65d8ca;
+  padding-left: 14px;
+  margin: 18px 0;
+  overflow-wrap: anywhere;
+}
+.source small {
+  color: #65d8ca;
+}
+.source p {
+  font-size: 12px;
+}
+#error {
+  padding: 18px;
+  border: 1px solid #ffad9f;
+  background: #512c2c;
+  color: #ffdbd3;
+  border-radius: 10px;
+}
+#batch-meta,
+#case-meta {
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -80px;
+  padding: 12px;
+  background: #b6f36a;
+  color: #081c26;
+  z-index: 5;
+}
+.skip:focus {
+  top: 12px;
+}
+footer {
+  padding: 36px 0;
+  font-size: 11px;
+  color: #b7ccd3;
+}
+.empty {
+  padding: 25px 0;
+  color: #b7ccd3;
+}
+.status-badge {
+  color: #f0c786;
+  font-weight: 700;
+}
+#review-form {
+  border-top: 1px solid #31515d;
+  padding-top: 10px;
+}
+@media (max-width: 900px) {
+  .three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .shell {
+    width: calc(100% - 32px);
+  }
+  header {
+    align-items: flex-start;
+    gap: 12px;
+  }
+  header img {
+    width: 140px;
+    height: auto;
+  }
+  nav {
+    justify-content: flex-end;
+    gap: 6px;
+  }
+  nav a {
+    font-size: 10px;
+  }
+  .hero {
+    padding: 44px 0 28px;
+  }
+  .panel {
+    padding: 18px;
+    border-radius: 12px;
+  }
+  .two,
+  .three {
+    grid-template-columns: 1fr;
+  }
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .metric {
+    padding: 12px;
+  }
+  .metric strong {
+    font-size: 25px;
+  }
+  .section-head {
+    align-items: stretch;
+  }
+  .lead {
+    font-size: 14px;
+  }
+  pre {
+    font-size: 11px;
+  }
+  .inset {
+    padding: 14px;
+  }
+  .actions {
+    gap: 8px;
+  }
+  button {
+    padding: 10px 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
