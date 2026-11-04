@@ -16,9 +16,15 @@ RefMatch combines a football appointment-planning prototype with an AI Evaluatio
 
 The published GitHub Pages site supports manual planning, labelled simulations, report imports, and browser-local review records. Live model calls and source-data refreshes require the separately configured local server or CLI.
 
-## Context for HackerRank assessment reviewers
+## micro1 Eval Hackathon
 
-For a [HackerRank](https://www.hackerrank.com/) assessment review, this repository provides a runnable example of Mohammed Roqa's work on evaluation design, explainable decision support, and software verification. The work can be inspected through its source, public demo, exported reports, and documented checks.
+**Event:** [micro1 Eval Hackathon on HackerRank](https://www.hackerrank.com/event/micro1-eval-hackathon).
+
+This README presents RefMatch Evaluation Lab as Mohammed Roqa's evaluation project for review in the context of the micro1 Eval Hackathon. Its central question is: **Can an AI reliably detect unsafe referee allocations, interpret changing committee evidence, and recognize when information is insufficient?**
+
+The football appointment scenario makes evaluation concrete: a confident explanation can accompany an invalid plan, a late update can change availability, and missing evidence should prevent clearance. RefMatch makes these failures inspectable through explicit rules, authored references, reproducible batches, and separate evidence-reading and rule-audit tasks.
+
+Reviewers can examine the source, run the public demonstration, inspect exported reports, and reproduce the documented checks. Use the linked event page for official rules and submission instructions; the table below summarizes evidence available in this repository.
 
 | Area to review | Evidence in this project |
 | --- | --- |
@@ -28,8 +34,6 @@ For a [HackerRank](https://www.hackerrank.com/) assessment review, this reposito
 | Reproducibility | Frozen batch settings, dataset/rule/input hashes, validated report imports, tracked source and reproducible builds. |
 | Failure analysis | Inspectable evidence, response/reference comparisons, paired-case differences, and per-rule metrics. |
 | Review and engineering | Blind review packs, disagreement/adjudication records, automated tests, mobile checks, and static publication. |
-
-This section describes the work available for review; it does not assert a particular assessment rubric, submission status, score, or HackerRank endorsement. Assessment access details and credentials are not part of this public repository.
 
 ### A short reviewer walkthrough
 
@@ -231,4 +235,4 @@ The public-profile information recorded in this project describes Mohammed as a 
 - [Archived historical methodology](demo/README.md), [1.1 notes](docs/release-1.1.md), [1.0 notes](docs/release-1.0.md), and [original project scope](docs/hackathon-demo-brief.md).
 - [Brand identity](brand/README.md), [founder asset provenance](assets/README.md), and [editable concept film](video/README.md).
 
-The landing-page board preserves a 2017/18 historical example, and the original film uses synthetic illustrations. The older Azure diagram describes the original concept rather than the current runtime. RefMatch began as an Inside the Game developer hackathon concept and is not an official Premier League appointment service.
+The landing-page board preserves a 2017/18 historical example, and the original film uses synthetic illustrations. The older Azure diagram describes the original concept rather than the current runtime. The original football-planning concept began as an Inside the Game developer hackathon project; the Evaluation Lab extends that work to AI evaluation. RefMatch is not an official Premier League appointment service.
