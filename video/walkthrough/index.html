@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#081c26">
+  <title>RefMatch Evaluation Lab — Video Walkthrough</title>
+  <meta name="description" content="A narrated walkthrough of RefMatch Evaluation Lab: the problem, grading, simulated results, and evidence behind unsafe clearances. By Mohammed Roqa.">
+  <meta property="og:title" content="RefMatch Evaluation Lab — Video Walkthrough">
+  <meta property="og:description" content="Find the failure. Follow the evidence. A narrated walkthrough by Mohammed Roqa.">
+  <meta property="og:image" content="https://mohammedroqa.github.io/Refmatch/video/walkthrough/poster.png">
+  <link rel="icon" href="../../brand/logos/app-icon.svg"><link rel="stylesheet" href="../../brand/theme.css">
+  <style>
+    body{background:#081c26}main,header,footer{width:min(1180px,calc(100% - 40px));margin:auto}header{padding:26px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid #31515d}header img{width:170px}header a{color:#b6f36a;font-size:14px}main{padding:45px 0 30px}.eyebrow{font-size:12px;color:#65d8ca;letter-spacing:.14em;text-transform:uppercase;font-weight:700}h1{font-size:clamp(32px,5vw,56px);margin:14px 0 18px}h1 span{color:#b6f36a}.lead{font-size:17px;color:#b7ccd3;max-width:850px;margin-bottom:24px}video{width:100%;aspect-ratio:16/9;background:#05131b;border:1px solid #31515d;border-radius:14px;box-shadow:0 28px 70px #0003}.meta{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 28px;color:#b7ccd3;font-size:13px}.meta span{padding:5px 11px;border:1px solid #31515d;border-radius:30px}.chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 26px}.chapters button{text-align:left;padding:13px 14px;border:1px solid #31515d;border-radius:8px;background:#102b36;color:#f3f5ef;font-size:13px;line-height:1.5}.chapters button:hover,.chapters button[aria-current="true"]{border-color:#b6f36a;background:#173946}.chapters time{display:block;color:#65d8ca;font-size:12px;margin-bottom:3px}h2{font-size:24px;margin-top:28px}details{border:1px solid #31515d;border-radius:10px;padding:20px;margin:24px 0}summary{cursor:pointer;color:#b6f36a;font-weight:700}.transcript h3{font-size:18px;margin:24px 0 10px}.transcript p{color:#b7ccd3}.links{display:flex;flex-wrap:wrap;gap:20px;font-size:14px;color:#b6f36a}.note{color:#aac1c8;font-size:13px;margin:20px 0}footer{border-top:1px solid #31515d;padding:28px 0 38px;color:#aac1c8;font-size:13px}.owner{font-size:17px;color:#f3f5ef;margin-bottom:8px}.tagline{color:#b6f36a;font-size:18px;margin:12px 0}a{color:#b6f36a}@media(max-width:700px){.chapters{grid-template-columns:1fr 1fr}header{align-items:flex-start}header img{width:140px}header a{font-size:12px}.lead{font-size:15px}}@media(max-width:420px){.chapters{grid-template-columns:1fr}main{padding-top:30px}}
+  </style>
+</head>
+<body>
+  <header><a href="../../" aria-label="RefMatch home"><img src="../../brand/logos/refmatch-primary.svg" alt="RefMatch"></a><a href="../../demo/eval.html">Open Evaluation Lab ↗</a></header>
+  <main>
+    <p class="eyebrow">Evaluation Lab 2.0 / Video walkthrough</p>
+    <h1>Find the failure.<br><span>Follow the evidence.</span></h1>
+    <p class="lead">Explore the problem, run an evaluation, and trace unsafe clearances back to the committee evidence.</p>
+    <video id="walkthrough" controls playsinline preload="metadata" poster="poster.png" aria-label="Narrated RefMatch Evaluation Lab walkthrough with English captions">
+      <source src="refmatch-evaluation-walkthrough.mp4" type="video/mp4">
+      <track kind="chapters" src="chapters.vtt" srclang="en" label="Chapters">
+      Your browser cannot play this video. <a href="refmatch-evaluation-walkthrough.mp4">Open the MP4</a>.
+    </video>
+    <div class="meta"><span id="runtime">Under 5 minutes</span><span>Narration + English captions</span><span>1080p</span><span>No sign-in required</span></div>
+    <h2>Jump to a chapter</h2><nav id="chapters" class="chapters" aria-label="Video chapters"></nav>
+    <p class="note">The walkthrough uses the Evaluation Lab’s labelled simulations. Narration is synthesized using Microsoft Zira.</p>
+    <details><summary>Read the transcript</summary><div id="transcript" class="transcript"></div></details>
+    <div class="links"><a href="refmatch-evaluation-walkthrough.mp4">Open video directly</a><a href="captions.vtt" download>English captions</a><a href="../../demo/eval-method.html">Evaluation method</a><a href="evidence/overconfident-batch.json">Recorded simulation report</a></div>
+    <noscript><p class="note">The video plays without JavaScript. Enable JavaScript for chapter navigation and the transcript.</p></noscript>
+  </main>
+  <footer><p class="owner">Project owner: <a href="https://mroqa.site/">Mohammed Roqa</a></p><p class="tagline">Made with ❤️ By Mohammed Roqa</p><p>© 2026 Mohammed Roqa. All rights reserved.</p><p>Third-party assets retain their respective licenses.</p></footer>
+  <script type="module">
+    const video=document.querySelector('#walkthrough');
+    const clock=s=>`${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;
+    const [chapters,scenes]=await Promise.all(['chapters.json','scenes.json'].map(p=>fetch(p).then(r=>{if(!r.ok)throw new Error('Could not load '+p);return r.json()})));
+    for(const [i,c] of chapters.entries()){
+      const button=document.createElement('button');button.type='button';
+      const time=document.createElement('time');time.textContent=clock(c.start);
+      const label=document.createElement('span');label.textContent=c.title;
+      button.append(time,label);button.addEventListener('click',()=>{video.currentTime=c.start;video.play().catch(()=>{});});
+      document.querySelector('#chapters').append(button);
+      const title=document.createElement('h3');title.textContent=clock(c.start)+' — '+c.title;
+      const paragraph=document.createElement('p');paragraph.textContent=scenes[i].text;
+      document.querySelector('#transcript').append(title,paragraph);
+    }
+    video.addEventListener('loadedmetadata',()=>document.querySelector('#runtime').textContent=clock(video.duration));
+    video.addEventListener('timeupdate',()=>document.querySelectorAll('#chapters button').forEach((b,i)=>b.setAttribute('aria-current',String(video.currentTime>=chapters[i].start&&video.currentTime<(chapters[i+1]?.start??Infinity)))));
+  </script>
+</body></html>

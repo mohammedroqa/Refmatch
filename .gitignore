@@ -62,6 +62,7 @@ __pycache__/
 # Keep the finished concept film as a project deliverable
 !video/refmatch-10s.mp4
 !video/refmatch-15s.mp4
+!video/walkthrough/refmatch-evaluation-walkthrough.mp4
 
 # Private evaluation challenges, credentials-free reports and run artifacts
 .eval-private/

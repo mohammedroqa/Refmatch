@@ -1,0 +1,74 @@
+[
+  {
+    "id": "intro",
+    "title": "RefMatch Evaluation Lab",
+    "start": 0,
+    "duration": 11
+  },
+  {
+    "id": "problem",
+    "title": "01 / The problem",
+    "start": 11,
+    "duration": 21.44
+  },
+  {
+    "id": "dataset",
+    "title": "02 / Cases and references",
+    "start": 32.44,
+    "duration": 26.04
+  },
+  {
+    "id": "grading",
+    "title": "03 / How grading works",
+    "start": 58.48,
+    "duration": 32.52
+  },
+  {
+    "id": "configure",
+    "title": "04 / Run a frozen batch",
+    "start": 91,
+    "duration": 17.16
+  },
+  {
+    "id": "results",
+    "title": "05 / Read the results",
+    "start": 108.16,
+    "duration": 29.52
+  },
+  {
+    "id": "uncertain",
+    "title": "06 / Failure: uncertainty becomes certainty",
+    "start": 137.68,
+    "duration": 27.4
+  },
+  {
+    "id": "withdrawal",
+    "title": "07 / Failure: a withdrawal is missed",
+    "start": 165.08,
+    "duration": 19.36
+  },
+  {
+    "id": "control",
+    "title": "08 / Check the scoring pipeline",
+    "start": 184.44,
+    "duration": 20
+  },
+  {
+    "id": "exports",
+    "title": "09 / Reproduce and review",
+    "start": 204.44,
+    "duration": 21.6
+  },
+  {
+    "id": "frontier",
+    "title": "10 / What the failures show",
+    "start": 226.04,
+    "duration": 20.88
+  },
+  {
+    "id": "credits",
+    "title": "Project owner and credits",
+    "start": 246.92,
+    "duration": 15.24
+  }
+]

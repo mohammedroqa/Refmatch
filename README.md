@@ -8,6 +8,7 @@ RefMatch combines a football appointment-planning prototype with an AI Evaluatio
 
 | Explore | Link |
 | --- | --- |
+| Video walkthrough | [Watch the narrated Evaluation Lab walkthrough](https://mohammedroqa.github.io/Refmatch/video/walkthrough/) |
 | Evaluation Lab 2.0 | [Open the Evaluation Lab](https://mohammedroqa.github.io/Refmatch/demo/eval.html) |
 | Matchweek planner | [Open the committee workspace](https://mohammedroqa.github.io/Refmatch/demo/) |
 | Project website | [RefMatch](https://mohammedroqa.github.io/Refmatch/) |
@@ -36,6 +37,10 @@ Reviewers can examine the source, run the public demonstration, inspect exported
 | Review and engineering | Blind review packs, disagreement/adjudication records, automated tests, mobile checks, and static publication. |
 
 ### A short reviewer walkthrough
+
+**Video walkthrough:** [Watch RefMatch Evaluation Lab](https://mohammedroqa.github.io/Refmatch/video/walkthrough/). Under five minutes, with narration, English captions, and chapter navigation. Anyone with the link can watch without signing in. The video covers the problem, grading, and source-level analysis of the lab's labelled simulated results.
+
+Project owner: **Mohammed Roqa**. © 2026 Mohammed Roqa. All rights reserved. **Made with ❤️ By Mohammed Roqa**.
 
 1. Open the [Evaluation Lab](https://mohammedroqa.github.io/Refmatch/demo/eval.html) and select **Check reference answers**. The consistency check covers all 136 cases.
 2. Choose **Evidence reading**, **Public validation**, and **Overconfident clearance**, then run a simulation batch.

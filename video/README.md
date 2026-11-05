@@ -1,4 +1,16 @@
-# RefMatch — 15-second concept film
+# RefMatch videos
+
+## Evaluation Lab walkthrough
+
+[Watch the narrated Evaluation Lab walkthrough](https://mohammedroqa.github.io/Refmatch/video/walkthrough/). The public player includes chapter navigation, English captions, and a transcript. The walkthrough covers the problem, grading, a complete simulated batch, and two unsafe-clearance failures traced to their evidence.
+
+[Production notes and editable sources](walkthrough/README.md).
+
+Project owner: **Mohammed Roqa**. © 2026 Mohammed Roqa. All rights reserved.
+
+**Made with ❤️ By Mohammed Roqa**
+
+## 15-second concept film
 
 [Watch or download the finished film](refmatch-15s.mp4).
 

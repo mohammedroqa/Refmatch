@@ -1,0 +1,487 @@
+{
+  "url": "https://mohammedroqa.github.io/Refmatch/demo/eval.html",
+  "recordedAt": "2026-11-05T00:50:42.391Z",
+  "source": "simulation",
+  "checks": [
+    {
+      "name": "overconfident batch",
+      "passed": true,
+      "metrics": {
+        "trial": 1,
+        "planned": 8,
+        "completed": 8,
+        "errors": 0,
+        "unrun": 0,
+        "coverage": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1
+        },
+        "accuracy": {
+          "numerator": 5,
+          "denominator": 8,
+          "value": 0.625
+        },
+        "endToEndAccuracy": {
+          "numerator": 5,
+          "denominator": 8,
+          "value": 0.625
+        },
+        "unsafeClearance": {
+          "numerator": 3,
+          "denominator": 5,
+          "value": 0.6
+        },
+        "invalidClearance": {
+          "numerator": 1,
+          "denominator": 2,
+          "value": 0.5
+        },
+        "unknownClearance": {
+          "numerator": 2,
+          "denominator": 3,
+          "value": 0.6666666666666666
+        },
+        "falseAlarms": {
+          "numerator": 0,
+          "denominator": 3,
+          "value": 0
+        },
+        "unsafeInterval": [
+          0.5,
+          0.6666666666666666
+        ],
+        "accuracyInterval": [
+          0.5,
+          0.75
+        ],
+        "families": 2,
+        "pairedConsistency": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "invariance": {
+          "numerator": 1,
+          "denominator": 2,
+          "value": 0.5
+        },
+        "extraction": {
+          "numerator": 5,
+          "denominator": 8,
+          "value": 0.625
+        },
+        "citations": {
+          "numerator": 5,
+          "denominator": 8,
+          "value": 0.625
+        },
+        "downstream": {
+          "numerator": 5,
+          "denominator": 8,
+          "value": 0.625
+        },
+        "confusion": {
+          "valid": {
+            "valid": 3,
+            "invalid": 0,
+            "insufficient_information": 0,
+            "error": 0,
+            "unrun": 0
+          },
+          "invalid": {
+            "valid": 1,
+            "invalid": 1,
+            "insufficient_information": 0,
+            "error": 0,
+            "unrun": 0
+          },
+          "insufficient_information": {
+            "valid": 2,
+            "invalid": 0,
+            "insufficient_information": 1,
+            "error": 0,
+            "unrun": 0
+          }
+        },
+        "ruleMetrics": [
+          {
+            "rule": "coverage",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          {
+            "rule": "capacity",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          {
+            "rule": "availability",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          {
+            "rule": "conflict",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          {
+            "rule": "eligibility",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          {
+            "rule": "spacing",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          {
+            "rule": "cutoff",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          {
+            "rule": "notes",
+            "tp": 2,
+            "fp": 0,
+            "fn": 3,
+            "precision": {
+              "numerator": 2,
+              "denominator": 2,
+              "value": 1
+            },
+            "recall": {
+              "numerator": 2,
+              "denominator": 5,
+              "value": 0.4
+            }
+          }
+        ],
+        "brier": 0.5961000000000001,
+        "calibrationNote": "Small sample: Brier is descriptive; no calibration claim.",
+        "latencyMedian": null,
+        "failures": [
+          "note-attendance-query-valid-01-0",
+          "note-attendance-query-valid-01-3",
+          "note-coordinator-thread-valid-01-1"
+        ]
+      }
+    },
+    {
+      "name": "reference-assisted control",
+      "passed": true,
+      "metrics": {
+        "trial": 1,
+        "planned": 8,
+        "completed": 8,
+        "errors": 0,
+        "unrun": 0,
+        "coverage": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1
+        },
+        "accuracy": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1
+        },
+        "endToEndAccuracy": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1
+        },
+        "unsafeClearance": {
+          "numerator": 0,
+          "denominator": 5,
+          "value": 0
+        },
+        "invalidClearance": {
+          "numerator": 0,
+          "denominator": 2,
+          "value": 0
+        },
+        "unknownClearance": {
+          "numerator": 0,
+          "denominator": 3,
+          "value": 0
+        },
+        "falseAlarms": {
+          "numerator": 0,
+          "denominator": 3,
+          "value": 0
+        },
+        "unsafeInterval": [
+          0,
+          0
+        ],
+        "accuracyInterval": [
+          1,
+          1
+        ],
+        "families": 2,
+        "pairedConsistency": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "invariance": {
+          "numerator": 2,
+          "denominator": 2,
+          "value": 1
+        },
+        "extraction": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1
+        },
+        "citations": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1
+        },
+        "downstream": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1
+        },
+        "confusion": {
+          "valid": {
+            "valid": 3,
+            "invalid": 0,
+            "insufficient_information": 0,
+            "error": 0,
+            "unrun": 0
+          },
+          "invalid": {
+            "valid": 0,
+            "invalid": 2,
+            "insufficient_information": 0,
+            "error": 0,
+            "unrun": 0
+          },
+          "insufficient_information": {
+            "valid": 0,
+            "invalid": 0,
+            "insufficient_information": 3,
+            "error": 0,
+            "unrun": 0
+          }
+        },
+        "ruleMetrics": [
+          {
+            "rule": "coverage",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          {
+            "rule": "capacity",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          {
+            "rule": "availability",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          {
+            "rule": "conflict",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          {
+            "rule": "eligibility",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          {
+            "rule": "spacing",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          {
+            "rule": "cutoff",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          {
+            "rule": "notes",
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "precision": {
+              "numerator": 5,
+              "denominator": 5,
+              "value": 1
+            },
+            "recall": {
+              "numerator": 5,
+              "denominator": 5,
+              "value": 1
+            }
+          }
+        ],
+        "brier": 0.048600000000000025,
+        "calibrationNote": "Small sample: Brier is descriptive; no calibration claim.",
+        "latencyMedian": null,
+        "failures": []
+      }
+    }
+  ],
+  "duration": 262.15999999999997,
+  "browserErrors": []
+}
