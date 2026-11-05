@@ -1,0 +1,32 @@
+<!doctype html>
+<html data-deployment="static" lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RefMatch walkthrough production cards</title>
+  <link rel="stylesheet" href="../../brand/theme.css">
+  <style>
+    body{width:1600px;height:900px;overflow:hidden;background:#081c26}
+    main{height:100%;padding:100px 110px 105px;position:relative;background:radial-gradient(ellipse at 94% 15%,#194b454f,transparent 55%)}
+    main:before{content:'';position:absolute;inset:0;background-image:linear-gradient(#65d8ca08 1px,transparent 1px),linear-gradient(90deg,#65d8ca08 1px,transparent 1px);background-size:70px 70px;pointer-events:none}
+    .logo{width:215px;margin-bottom:48px}.eyebrow{color:#65d8ca;letter-spacing:.18em;text-transform:uppercase;font-size:16px;font-weight:700;margin-bottom:22px}
+    h1{font-size:76px;line-height:1.1;max-width:1250px;margin-bottom:30px}h1 span{color:#b6f36a}h2{font-size:32px;margin:0 0 18px}
+    .lead{font-size:27px;max-width:1100px;color:#b7ccd3;line-height:1.55}.pills{display:flex;gap:16px;margin-top:48px}.pills span{border:1px solid #52717b;border-radius:99px;padding:11px 20px;color:#b6f36a;font-size:18px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}.box{border:1px solid #31515d;background:#102b36;padding:28px 32px;border-radius:18px}.box p{font-size:22px;color:#b7ccd3;line-height:1.5}.mint{color:#b6f36a}.teal{color:#65d8ca}.amber{color:#f0c786}
+    .verdicts{display:flex;gap:16px;margin-top:24px}.verdicts div{flex:1;background:#0b222c;border-top:3px solid #65d8ca;padding:20px;font-size:19px}.verdicts b{display:block;font-size:24px;color:#f3f5ef;margin-bottom:8px}.small{font-size:18px;color:#aac1c8;margin-top:22px}
+    .credit-layout{display:flex;align-items:center;gap:64px;margin-top:30px}.portrait{width:225px;height:270px;object-fit:cover;border-radius:20px;border:1px solid #31515d}.credit-layout h1{font-size:66px;margin-bottom:18px}.tagline{font-size:37px;margin:26px 0;color:#b6f36a}.copyright{font-size:23px;color:#aac1c8}
+    .line{width:100px;height:4px;background:#b6f36a;margin:32px 0}.source{position:absolute;bottom:38px;font-size:16px;color:#aac1c8}
+    .reveal{animation:reveal .65s ease-out both}@keyframes reveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  </style>
+</head>
+<body><main id="card"></main>
+<script>
+const logo='<img class="logo" src="../../brand/logos/refmatch-primary.svg" alt="RefMatch">';
+const cards={
+intro:`${logo}<p class="eyebrow">Evaluation Lab 2.0 · Video walkthrough</p><h1>Find the failure.<br><span>Follow the evidence.</span></h1><p class="lead">Can an AI safely clear a referee allocation<br>when the evidence changes?</p><div class="pills"><span>The problem</span><span>The evaluation</span><span>The results</span></div><p class="source">By Mohammed Roqa · Live app navigation + labelled simulated results</p>`,
+grading:`<p class="eyebrow">The evaluation contract</p><h1 style="font-size:58px;margin-bottom:22px">Read correctly. <span>Decide correctly.</span></h1><div class="row"><article class="box"><h2 class="teal">01 / Evidence reading</h2><p>Committee notes → extracted statuses<br>+ source citations → verdict</p></article><article class="box"><h2 class="mint">02 / Rule audit</h2><p>Structured reference facts<br>→ apply appointment constraints</p></article></div><div class="verdicts"><div><b>Invalid</b>A demonstrated violation.<br>Takes precedence over unknowns.</div><div><b>Insufficient information</b>No established violation;<br>a required check is unresolved.</div><div><b>Valid</b>All required checks clear.</div></div><p class="small">Graded: verdicts · rule categories · extracted facts · supporting citations</p><p class="small">Explanatory prose is reviewed by people.</p><p class="source">Method: RefMatch Evaluation Lab 2.0 · Experimental appointment rules</p>`,
+frontier:`<p class="eyebrow">Results and frontier-model scope</p><h1 style="font-size:65px">From unsafe clearance<br><span>back to the evidence.</span></h1><div class="row"><article class="box"><h2 class="mint">Demonstrated here</h2><p>Uncertainty promoted to fact.<br>A withdrawal ignored.<br>Both lead to unsafe clearance.</p><p class="amber" style="margin-top:16px;color:#f0c786">Scripted simulations · no provider calls</p></article><article class="box"><h2 class="teal">Evaluate frontier models</h2><p>Exact model + frozen settings.<br>Actual provider batches.<br>Coverage + case-level failure evidence.</p><p style="margin-top:16px">Use the local provider runner<br>with the same scoring pipeline.</p></article></div><p class="source">Trace the failure → inspect the source → compare with the reference.</p>`,
+credits:`${logo}<p class="eyebrow">Project owner</p><div class="credit-layout"><img class="portrait" src="../../assets/mohammed-roqa-portrait.webp" alt="Mohammed Roqa"><div><h1>Mohammed Roqa</h1><p class="lead">RefMatch Evaluation Lab</p><div class="line"></div><p class="tagline">Made with ❤️ By Mohammed Roqa</p><p class="copyright">© 2026 Mohammed Roqa. All rights reserved.</p></div></div><p class="source">mroqa.site · RefMatch project and walkthrough · Third-party assets retain their respective licenses.</p>`
+};
+document.querySelector('#card').innerHTML=cards[new URLSearchParams(location.search).get('scene')]||cards.intro;
+document.fonts.ready.then(()=>window.cardReady=true);
+</script></body></html>

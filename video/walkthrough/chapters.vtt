@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:11.000
+RefMatch Evaluation Lab
+
+00:00:11.000 --> 00:00:32.440
+01 / The problem
+
+00:00:32.440 --> 00:00:58.480
+02 / Cases and references
+
+00:00:58.480 --> 00:01:31.000
+03 / How grading works
+
+00:01:31.000 --> 00:01:48.160
+04 / Run a frozen batch
+
+00:01:48.160 --> 00:02:17.680
+05 / Read the results
+
+00:02:17.680 --> 00:02:45.080
+06 / Failure: uncertainty becomes certainty
+
+00:02:45.080 --> 00:03:04.440
+07 / Failure: a withdrawal is missed
+
+00:03:04.440 --> 00:03:24.440
+08 / Check the scoring pipeline
+
+00:03:24.440 --> 00:03:46.040
+09 / Reproduce and review
+
+00:03:46.040 --> 00:04:06.920
+10 / What the failures show
+
+00:04:06.920 --> 00:04:22.160
+Project owner and credits

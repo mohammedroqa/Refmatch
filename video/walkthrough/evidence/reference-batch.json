@@ -1,0 +1,280 @@
+{
+  "id": "2eb63298-1566-42f6-805b-620163b1e6f7",
+  "version": "2.0.0",
+  "createdAt": "2026-11-05T00:52:40.125Z",
+  "datasetHash": "d5ed0dcacd2dda4dd9de00fece6ff1ac1233fc1f552870430472e013fe938b2e",
+  "rulesetHash": "3f075314b784e589d2b79c9ae338117e8ad8d476cfa6fb531874bf5867c0acb7",
+  "split": "validation",
+  "source": "simulation",
+  "settings": {
+    "provider": "simulation",
+    "model": "reference",
+    "temperature": 0,
+    "maxOutputTokens": 2048,
+    "promptVersion": "2.0.0",
+    "stage": "evidence",
+    "trials": 1
+  },
+  "caseIds": [
+    "note-attendance-query-valid-01-0",
+    "note-attendance-query-valid-01-1",
+    "note-attendance-query-valid-01-2",
+    "note-attendance-query-valid-01-3",
+    "note-coordinator-thread-valid-01-0",
+    "note-coordinator-thread-valid-01-1",
+    "note-coordinator-thread-valid-01-2",
+    "note-coordinator-thread-valid-01-3"
+  ],
+  "attempts": [
+    {
+      "caseId": "note-attendance-query-valid-01-0",
+      "trial": 1,
+      "status": "completed",
+      "prediction": {
+        "verdict": "insufficient_information",
+        "probabilities": {
+          "valid": 0.09,
+          "invalid": 0.09,
+          "insufficient_information": 0.82
+        },
+        "categories": [
+          "notes"
+        ],
+        "facts": [
+          {
+            "refereeId": "R_publicv20_28",
+            "fixtureId": "F_publicv20_28",
+            "status": "unknown",
+            "evidenceIds": [
+              "note-latest"
+            ]
+          }
+        ],
+        "explanation": "SIMULATED: reference-assisted demonstration with scripted changes. This is not measured model reasoning."
+      },
+      "latencyMs": null,
+      "resolvedModel": null,
+      "usage": null,
+      "rawResponse": null,
+      "packetHash": "9462041a5afb7b17269b0a7ff95892584613db8047769de2c306f60ccf46dba1"
+    },
+    {
+      "caseId": "note-attendance-query-valid-01-1",
+      "trial": 1,
+      "status": "completed",
+      "prediction": {
+        "verdict": "valid",
+        "probabilities": {
+          "valid": 0.82,
+          "invalid": 0.09,
+          "insufficient_information": 0.09
+        },
+        "categories": [],
+        "facts": [
+          {
+            "refereeId": "R_publicv21_28",
+            "fixtureId": "F_publicv21_28",
+            "status": "available",
+            "evidenceIds": [
+              "note-latest"
+            ]
+          }
+        ],
+        "explanation": "SIMULATED: reference-assisted demonstration with scripted changes. This is not measured model reasoning."
+      },
+      "latencyMs": null,
+      "resolvedModel": null,
+      "usage": null,
+      "rawResponse": null,
+      "packetHash": "671c95c0e5e6daa2bcd096a2171ca4a5b8b023e0f0162a1e434115775ba7b320"
+    },
+    {
+      "caseId": "note-attendance-query-valid-01-2",
+      "trial": 1,
+      "status": "completed",
+      "prediction": {
+        "verdict": "invalid",
+        "probabilities": {
+          "valid": 0.09,
+          "invalid": 0.82,
+          "insufficient_information": 0.09
+        },
+        "categories": [
+          "notes"
+        ],
+        "facts": [
+          {
+            "refereeId": "R_publicv22_28",
+            "fixtureId": "F_publicv22_28",
+            "status": "unavailable",
+            "evidenceIds": [
+              "note-latest"
+            ]
+          }
+        ],
+        "explanation": "SIMULATED: reference-assisted demonstration with scripted changes. This is not measured model reasoning."
+      },
+      "latencyMs": null,
+      "resolvedModel": null,
+      "usage": null,
+      "rawResponse": null,
+      "packetHash": "6850ebd24553529362d2a84cea0ab8200f574998d5dcaa4b2b1397079dc739dc"
+    },
+    {
+      "caseId": "note-attendance-query-valid-01-3",
+      "trial": 1,
+      "status": "completed",
+      "prediction": {
+        "verdict": "insufficient_information",
+        "probabilities": {
+          "valid": 0.09,
+          "invalid": 0.09,
+          "insufficient_information": 0.82
+        },
+        "categories": [
+          "notes"
+        ],
+        "facts": [
+          {
+            "refereeId": "R_publicv23_28",
+            "fixtureId": "F_publicv23_28",
+            "status": "unknown",
+            "evidenceIds": [
+              "note-latest"
+            ]
+          }
+        ],
+        "explanation": "SIMULATED: reference-assisted demonstration with scripted changes. This is not measured model reasoning."
+      },
+      "latencyMs": null,
+      "resolvedModel": null,
+      "usage": null,
+      "rawResponse": null,
+      "packetHash": "8a5e235a8ff1cb16aa746782346c7cc21120bb0cbbe8d31477d31dd0df73d685"
+    },
+    {
+      "caseId": "note-coordinator-thread-valid-01-0",
+      "trial": 1,
+      "status": "completed",
+      "prediction": {
+        "verdict": "valid",
+        "probabilities": {
+          "valid": 0.82,
+          "invalid": 0.09,
+          "insufficient_information": 0.09
+        },
+        "categories": [],
+        "facts": [
+          {
+            "refereeId": "R_publicv20_28",
+            "fixtureId": "F_publicv20_28",
+            "status": "available",
+            "evidenceIds": [
+              "note-latest"
+            ]
+          }
+        ],
+        "explanation": "SIMULATED: reference-assisted demonstration with scripted changes. This is not measured model reasoning."
+      },
+      "latencyMs": null,
+      "resolvedModel": null,
+      "usage": null,
+      "rawResponse": null,
+      "packetHash": "ff17c6ab16b12ab762e29e4c1be7033479ec34456f19261e3fdb26341f529477"
+    },
+    {
+      "caseId": "note-coordinator-thread-valid-01-1",
+      "trial": 1,
+      "status": "completed",
+      "prediction": {
+        "verdict": "invalid",
+        "probabilities": {
+          "valid": 0.09,
+          "invalid": 0.82,
+          "insufficient_information": 0.09
+        },
+        "categories": [
+          "notes"
+        ],
+        "facts": [
+          {
+            "refereeId": "R_publicv21_28",
+            "fixtureId": "F_publicv21_28",
+            "status": "unavailable",
+            "evidenceIds": [
+              "note-latest"
+            ]
+          }
+        ],
+        "explanation": "SIMULATED: reference-assisted demonstration with scripted changes. This is not measured model reasoning."
+      },
+      "latencyMs": null,
+      "resolvedModel": null,
+      "usage": null,
+      "rawResponse": null,
+      "packetHash": "131839482a77f88a97e8ab91901b6afca46911ec266b2f3c00048cd749fa5cc4"
+    },
+    {
+      "caseId": "note-coordinator-thread-valid-01-2",
+      "trial": 1,
+      "status": "completed",
+      "prediction": {
+        "verdict": "insufficient_information",
+        "probabilities": {
+          "valid": 0.09,
+          "invalid": 0.09,
+          "insufficient_information": 0.82
+        },
+        "categories": [
+          "notes"
+        ],
+        "facts": [
+          {
+            "refereeId": "R_publicv22_28",
+            "fixtureId": "F_publicv22_28",
+            "status": "unknown",
+            "evidenceIds": [
+              "note-latest"
+            ]
+          }
+        ],
+        "explanation": "SIMULATED: reference-assisted demonstration with scripted changes. This is not measured model reasoning."
+      },
+      "latencyMs": null,
+      "resolvedModel": null,
+      "usage": null,
+      "rawResponse": null,
+      "packetHash": "2c81ad806d5a78edcb219f6dfa04bec1a34de3c76d275746db05db1a9100be53"
+    },
+    {
+      "caseId": "note-coordinator-thread-valid-01-3",
+      "trial": 1,
+      "status": "completed",
+      "prediction": {
+        "verdict": "valid",
+        "probabilities": {
+          "valid": 0.82,
+          "invalid": 0.09,
+          "insufficient_information": 0.09
+        },
+        "categories": [],
+        "facts": [
+          {
+            "refereeId": "R_publicv23_28",
+            "fixtureId": "F_publicv23_28",
+            "status": "available",
+            "evidenceIds": [
+              "note-latest"
+            ]
+          }
+        ],
+        "explanation": "SIMULATED: reference-assisted demonstration with scripted changes. This is not measured model reasoning."
+      },
+      "latencyMs": null,
+      "resolvedModel": null,
+      "usage": null,
+      "rawResponse": null,
+      "packetHash": "24cefac80f5fd1adcd90200f0a0368a5d43af5d864f7db4ed22d01197ff2b8a6"
+    }
+  ]
+}

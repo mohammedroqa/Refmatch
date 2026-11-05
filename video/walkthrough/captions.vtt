@@ -1,0 +1,205 @@
+WEBVTT
+
+00:00:00.530 --> 00:00:04.600
+Welcome to RefMatch Evaluation Lab, a project by Mohammed Roqa.
+
+00:00:04.660 --> 00:00:08.505
+This walkthrough explores the problem, runs an evaluation, and follows a failure
+
+00:00:08.565 --> 00:00:09.920
+back to its evidence.
+
+00:00:11.530 --> 00:00:14.940
+A confident explanation can hide an unsafe referee allocation.
+
+00:00:15.000 --> 00:00:18.420
+A late withdrawal can invalidate a plan, while uncertain attendance should prevent
+
+00:00:18.480 --> 00:00:22.935
+clearance. RefMatch tests whether an AI can read changing committee evidence, apply
+
+00:00:22.995 --> 00:00:26.150
+appointment rules, and recognize missing information.
+
+00:00:26.210 --> 00:00:28.410
+The rules and cases are experimental.
+
+00:00:28.470 --> 00:00:31.390
+Today's demonstration uses clearly labelled simulations.
+
+00:00:32.970 --> 00:00:38.410
+First, check the reference answers. All 136 authored references agree with the deterministic
+
+00:00:38.470 --> 00:00:43.625
+validator. The corpus has 24 families, with 92 development cases and 44
+
+00:00:43.685 --> 00:00:47.535
+public validation cases. Related variants stay together.
+
+00:00:47.595 --> 00:00:50.175
+Sixteen cases test narrative evidence reading.
+
+00:00:50.235 --> 00:00:54.080
+Both splits are public, so validation is not an unseen benchmark.
+
+00:00:54.140 --> 00:00:57.410
+Reference agreement checks consistency, not expert approval.
+
+00:00:59.010 --> 00:01:01.435
+Two tasks separate the source of a failure.
+
+00:01:01.495 --> 00:01:04.900
+Rule audit supplies structured facts and tests rule application.
+
+00:01:04.960 --> 00:01:08.525
+Evidence reading withholds reference committee facts and asks for extracted statuses,
+
+00:01:08.585 --> 00:01:13.110
+source citations, and a verdict. A demonstrated violation means invalid, even if
+
+00:01:13.170 --> 00:01:17.650
+another check is unresolved. With no established violation, an unresolved required
+
+00:01:17.710 --> 00:01:19.920
+check means insufficient information.
+
+00:01:19.980 --> 00:01:24.660
+Only cleared checks permit valid. Scoring compares verdicts, rule categories, extracted
+
+00:01:24.720 --> 00:01:27.390
+facts, and citations against references.
+
+00:01:27.450 --> 00:01:29.920
+Explanatory prose is left for human review.
+
+00:01:31.530 --> 00:01:35.460
+Let's choose Evidence reading, Public validation, and Overconfident clearance.
+
+00:01:35.520 --> 00:01:37.925
+We keep one trial and run the simulation.
+
+00:01:37.985 --> 00:01:40.390
+This task and split contain eight cases.
+
+00:01:40.450 --> 00:01:44.120
+Each batch freezes its case list, prompt version, settings, and dataset and rule
+
+00:01:44.180 --> 00:01:47.080
+hashes. No model provider is called.
+
+00:01:48.690 --> 00:01:52.220
+All eight cases completed, with no errors or unrun cases.
+
+00:01:52.280 --> 00:01:56.675
+Five verdicts are correct: 62.5 percent end to end accuracy.
+
+00:01:56.735 --> 00:02:00.640
+But three of the five invalid or unresolved plans were incorrectly cleared: 60 percent
+
+00:02:00.700 --> 00:02:04.960
+unsafe clearance. That includes two of three unresolved cases and one of two invalid
+
+00:02:05.020 --> 00:02:09.960
+plans. These denominators matter. Accuracy includes every planned case,
+
+00:02:10.020 --> 00:02:13.300
+while conditional safety rates must be read alongside coverage.
+
+00:02:13.360 --> 00:02:16.615
+These are simulated results, not measured model performance.
+
+00:02:18.210 --> 00:02:21.485
+Filter for unsafe clearances and inspect this attendance case.
+
+00:02:21.545 --> 00:02:25.835
+The earlier roster says available. The latest usable note says travel is still unconfirmed
+
+00:02:25.895 --> 00:02:28.530
+and explicitly warns against assuming attendance.
+
+00:02:28.590 --> 00:02:32.050
+A later note falls after the planning cutoff, and the untrusted attachment is not
+
+00:02:32.110 --> 00:02:36.025
+a committee update. The correct verdict is insufficient information.
+
+00:02:36.085 --> 00:02:39.435
+The scripted response instead extracts available and returns valid.
+
+00:02:39.495 --> 00:02:43.075
+The stage diagnosis shows how a wrong extracted fact produces the wrong downstream
+
+00:02:43.135 --> 00:02:43.995
+decision.
+
+00:02:45.610 --> 00:02:49.770
+A second failure is more direct. Both coordinators confirm that the referee has withdrawn
+
+00:02:49.830 --> 00:02:53.910
+and is unavailable. The reference therefore marks the allocation invalid.
+
+00:02:53.970 --> 00:02:56.760
+The overconfident simulation still calls it valid.
+
+00:02:56.820 --> 00:03:01.005
+Together, these examples distinguish an unresolved check from a demonstrated violation,
+
+00:03:01.065 --> 00:03:03.385
+and show why either one should prevent clearance.
+
+00:03:04.970 --> 00:03:08.215
+Now run Reference assisted answers on the same task and split.
+
+00:03:08.275 --> 00:03:12.485
+The simulation matches all eight references and clears none of the five unsafe plans.
+
+00:03:12.545 --> 00:03:16.020
+Extraction and citation matches also reach one hundred percent.
+
+00:03:16.080 --> 00:03:19.190
+This is expected because the simulation reads the answer key.
+
+00:03:19.250 --> 00:03:23.355
+It verifies the scoring pipeline; it does not demonstrate model intelligence.
+
+00:03:24.970 --> 00:03:29.110
+Download the batch report to preserve the frozen settings, input hashes, and individual
+
+00:03:29.170 --> 00:03:33.750
+attempts. Scores can also be exported as a spreadsheet friendly CSV.
+
+00:03:33.810 --> 00:03:37.045
+Blind review packs omit authored answers and revealing titles.
+
+00:03:37.105 --> 00:03:40.760
+Separate domain and technical reviewers can record judgments, with a third adjudicator
+
+00:03:40.820 --> 00:03:44.985
+for disagreements. Reviewer identities and expertise are self declared.
+
+00:03:46.570 --> 00:03:50.540
+The failure explorer makes two patterns visible: uncertainty promoted to fact, and
+
+00:03:50.600 --> 00:03:54.100
+a withdrawal ignored. Both lead to unsafe clearance.
+
+00:03:54.160 --> 00:03:56.355
+These runs are scripted simulations.
+
+00:03:56.415 --> 00:04:00.170
+For frontier model evaluation, configure an exact model through the local provider
+
+00:04:00.230 --> 00:04:02.920
+runner and use the same frozen batches and scoring.
+
+00:04:02.980 --> 00:04:05.860
+Then inspect each measured failure against its source evidence.
+
+00:04:07.450 --> 00:04:11.595
+RefMatch. Find the failure. Follow the evidence.
+
+00:04:11.655 --> 00:04:17.245
+Project owner: Mohammed Roqa. Copyright 2026, Mohammed Roqa.
+
+00:04:17.305 --> 00:04:19.205
+Made with love by Mohammed Roqa.

@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "builtAt": "2026-11-04T22:31:11.967Z",
+  "builtAt": "2026-11-05T00:55:31.834Z",
   "files": [
     {
       "path": ".nojekyll",
@@ -396,6 +396,71 @@
       "path": "video/storyboard.png",
       "bytes": 663577,
       "sha256": "74ee5e287dbd7c432630c0b8b4d6402a9da1a3859c5f1251a2a8dd248e7a6ce6"
+    },
+    {
+      "path": "video/walkthrough/captions.vtt",
+      "bytes": 6511,
+      "sha256": "b84601397cbfc1510a8c0335c224a98d2a8eabe0d1c48337bd9784b1150f883e"
+    },
+    {
+      "path": "video/walkthrough/cards.html",
+      "bytes": 5481,
+      "sha256": "6d6427c7a625354d1c8c8e906ce580a03ab24889968eb37776e4fe9ed578d227"
+    },
+    {
+      "path": "video/walkthrough/chapters.json",
+      "bytes": 1382,
+      "sha256": "c39ec8d2932ef2f0c66a73486325bf6c82d7454bf60473a206a9ef303c4a2c38"
+    },
+    {
+      "path": "video/walkthrough/chapters.vtt",
+      "bytes": 708,
+      "sha256": "b9cbaa7d083bcfae6f74d86d693fe6b3e7281e971d76b25229678a2e4d6680b2"
+    },
+    {
+      "path": "video/walkthrough/evidence/blind-review-pack.json",
+      "bytes": 2750838,
+      "sha256": "b2a5da878d5649e8d505ab46e81734d26b41aa6b6881f583c4b76bcb03470ffb"
+    },
+    {
+      "path": "video/walkthrough/evidence/overconfident-batch.json",
+      "bytes": 8149,
+      "sha256": "951ca9b2b1739e503b7d576a62f5a6eaa550393f98f3992828ce3d00bbd6cb54"
+    },
+    {
+      "path": "video/walkthrough/evidence/reference-batch.json",
+      "bytes": 8264,
+      "sha256": "961d09fe2ee9e44a1c59671023ebeed81f900bfb9c2b06a373943cca1173ca8b"
+    },
+    {
+      "path": "video/walkthrough/evidence/verification.json",
+      "bytes": 11506,
+      "sha256": "db3dda811930828812e201bd4fc1c4eeb8f1ced58ee4433be03e3c07eaa5c0bc"
+    },
+    {
+      "path": "video/walkthrough/index.html",
+      "bytes": 6548,
+      "sha256": "32ebb7a5d10056d367df9c277e9078eac21a652f568886cdfc5497420a6b632e"
+    },
+    {
+      "path": "video/walkthrough/media.json",
+      "bytes": 458,
+      "sha256": "97ef4f18d4bffc9c87bfb5f894af85ac9aab39d7d40f5de24bd66bab4f923710"
+    },
+    {
+      "path": "video/walkthrough/poster.png",
+      "bytes": 273918,
+      "sha256": "e04ac355ea1bedd56eb068095588fb67c7f30b6e4a7e3c9a739e79ce67dcd418"
+    },
+    {
+      "path": "video/walkthrough/refmatch-evaluation-walkthrough.mp4",
+      "bytes": 12586662,
+      "sha256": "56f1f05ed1575924663c5c72d3c8fe506c17697e8e8bbc53b6d83e9c1eed5ddc"
+    },
+    {
+      "path": "video/walkthrough/scenes.json",
+      "bytes": 5362,
+      "sha256": "3257c3d0f4076548f322fef6e20704714db4a8d86695a8357b3fac6f7d950c52"
     }
   ]
 }
